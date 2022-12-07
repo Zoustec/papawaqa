@@ -1,0 +1,3516 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<krpano version="1.19-pr16">
+
+    
+  <!-- Spot Style - move -->
+
+
+  <style name="Iconmove"
+         url="%FIRSTXML%/spots/ui_move_user_defaultpoint0.png"
+         visible="false"
+         edge="center"
+         alpha="0.8"
+         onloaded="showPermanentTooltip(touch);"
+         onhover="onhoverIconmove"
+         onover="onoverIconmove"
+         onout="onoutIconmove"
+
+
+         width="105"
+         height="prop"
+         />
+  <action name="onhoverIconmove">
+    showtooltip('hotspot');
+  </action>
+  <action name="onoverIconmove">
+tween(scale, 1.2);
+tween(alpha, 1);
+pauseautorotation(forcehotspot);
+
+  </action>
+  <action name="onoutIconmove">
+    hideTooltip();
+    tween(scale, 1);
+    tween(alpha, 0.8);
+resumeautorotation(forcehotspot);
+
+  </action>
+
+
+
+  <!-- unsupported kind of display : PointMap -->
+
+
+  
+  <!-- Spot Style - Gallery -->
+  <style name="PolygonGallery"
+           visible="false"
+           bordercolor="0xffeebd"
+           fillcolor="0xffffff"
+           borderwidth="1"
+           borderalpha="1"
+           fillalpha="0"
+           capture="false"
+           onhover="onhoverPolygonGallery"
+           onover="onoverPolygonGallery"
+           onout="onoutPolygonGallery"
+           />
+  <action name="onhoverPolygonGallery">
+    showTooltip('hotspot');
+  </action>
+
+  <action name="onoverPolygonGallery">
+    set(bordercolor, 0xffeebd);
+    set(fillcolor, 0xffffff);
+    set(borderalpha, 1);
+    set(fillalpha, 0.59999999999999998);
+    set(borderwidth, 2);pauseautorotation(forcehotspot);
+
+  </action>
+
+  <action name="onoutPolygonGallery">
+
+    set(bordercolor, 0xffeebd);
+    set(fillcolor, 0xffffff);
+    set(borderalpha, 1);
+    set(fillalpha, 0);
+
+    set(borderwidth, 1);
+    hideTooltip();resumeautorotation(forcehotspot);
+
+  </action>
+
+
+
+        
+  <!-- Video Spot Style - Default Video Spot Style -->
+  <style name="RectVideoDefaultVideoSpotStyle"
+         capture="false"
+         visible="false"
+         distorted="true"
+         scale="1.0"
+         url.flash="%SWFPATH%/graphics/videoplayer.swf"
+         url.html5="%FIRSTXML%/graphics/videoplayer.js"
+         loop="true"
+         autoresume="true"
+         pausedonstart="true"
+         pausedonstart.android="false"
+         pauseothersounds="false"
+         canstart="false"
+         onhover="onhoverRectVideoDefaultVideoSpotStyle"
+         onout="onoutRectVideoDefaultVideoSpotStyle"
+         onvideoready="onvideoreadyRectVideoDefaultVideoSpotStyle"
+         />
+  <style name="RectVideoDefaultVideoSpotStyle" 
+    directionalsound="false"
+  />
+  <style name="RectVideoDefaultVideoSpotStyle" stateVideo="startplaying" devices="no-ios"/>
+  <style name="RectVideoDefaultVideoSpotStyle" stateVideo="startpaused"  devices="ios"   />
+  <style name="RectVideoDefaultVideoSpotStyle" stateVideo="startplaying" devices="ios10" />
+  <action name="onhoverRectVideoDefaultVideoSpotStyle">
+    showTooltip('hotspot');
+  </action>
+  <action name="onoutRectVideoDefaultVideoSpotStyle">
+    hideTooltip();
+  </action>
+  <action name="onvideoreadyRectVideoDefaultVideoSpotStyle">
+    set(isVideoReadyForPlaying, false);
+    if (isvideoready,
+      if(panovideospotsstate,set(canstart, true););
+      if (canstart,
+        set(isVideoReadyForPlaying, true);
+      );
+    );
+    if(isVideoReadyForPlaying,
+
+    if(tour_displayspots,
+      if(ispaused,
+        if(stateVideo == "startplaying",
+          set(stateVideo, "playing");
+          play();
+        );
+      );
+    );
+    if(device.flash OR (device.webgl AND !device.ios),
+      if (tour_soundson,
+        div(volume, tour_soundsvolume, 100);
+      ,
+        set(volume, 0);
+      );
+    ,
+      ifnot(device.ios,
+        if (tour_soundson,
+          js(kpanotour.Sounds.startVideosSounds(get(volume)));
+        ,
+          js(kpanotour.Sounds.stopVideosSounds());
+        );
+      );
+    );
+    ,
+
+      delayedcall(0.5,onvideoreadyRectVideoDefaultVideoSpotStyle());
+    );
+  </action>
+
+
+
+  
+  <!-- Spot Style - Web -->
+  <style name="PolygonWeb"
+           visible="false"
+           bordercolor="0xffeebd"
+           fillcolor="0xffffff"
+           borderwidth="1"
+           borderalpha="1"
+           fillalpha="0"
+           capture="false"
+           onhover="onhoverPolygonWeb"
+           onover="onoverPolygonWeb"
+           onout="onoutPolygonWeb"
+           />
+  <action name="onhoverPolygonWeb">
+    showTooltip('hotspot');
+  </action>
+
+  <action name="onoverPolygonWeb">
+    set(bordercolor, 0xffeebd);
+    set(fillcolor, 0xffffff);
+    set(borderalpha, 1);
+    set(fillalpha, 0.59999999999999998);
+    set(borderwidth, 2);pauseautorotation(forcehotspot);
+
+  </action>
+
+  <action name="onoutPolygonWeb">
+
+    set(bordercolor, 0xffeebd);
+    set(fillcolor, 0xffffff);
+    set(borderalpha, 1);
+    set(fillalpha, 0);
+
+    set(borderwidth, 1);
+    hideTooltip();resumeautorotation(forcehotspot);
+
+  </action>
+
+
+
+    
+  <!-- Spot Style - artWork -->
+
+
+  <style name="IconartWork"
+         url="%FIRSTXML%/spots/ui_spot_investigate_user_defaultpoint1.png"
+         visible="false"
+         edge="center"
+         alpha="0.8"
+         onhover="onhoverIconartWork"
+         onover="onoverIconartWork"
+         onout="onoutIconartWork"
+
+         height="35"
+         width="35"
+         />
+  <action name="onhoverIconartWork">
+    showtooltip('hotspot');
+  </action>
+  <action name="onoverIconartWork">
+tween(scale, 1.2);
+tween(alpha, 1);
+pauseautorotation(forcehotspot);
+
+  </action>
+  <action name="onoutIconartWork">
+    hideTooltip();
+    tween(scale, 1);
+    tween(alpha, 0.8);
+resumeautorotation(forcehotspot);
+
+  </action>
+
+
+
+    
+  <!-- Spot Style - Furniture -->
+
+
+  <style name="IconFurniture"
+         url="%FIRSTXML%/spots/ui_spot_more_user_defaultpoint2.png"
+         visible="false"
+         edge="center"
+         zoom="true"
+
+         alpha="0.8"
+         onloaded="if(scene[get(xml.scene)].planar,if(zoom,set(zoom, false);););"
+         onhover="onhoverIconFurniture"
+         onover="onoverIconFurniture"
+         onout="onoutIconFurniture"
+
+         height="35"
+         width="35"
+         />
+  <action name="onhoverIconFurniture">
+    showtooltip('hotspot');
+  </action>
+  <action name="onoverIconFurniture">
+tween(scale, 1.2);
+tween(alpha, 1);
+pauseautorotation(forcehotspot);
+
+  </action>
+  <action name="onoutIconFurniture">
+    hideTooltip();
+    tween(scale, 1);
+    tween(alpha, 0.8);
+resumeautorotation(forcehotspot);
+
+  </action>
+
+
+
+    
+  <!-- Spot Style - YT -->
+
+
+  <style name="IconYT"
+         url="%FIRSTXML%/spots/ui_spot_yt_user_defaultpoint3.png"
+         visible="false"
+         edge="center"
+         alpha="0.8"
+         onhover="onhoverIconYT"
+         onover="onoverIconYT"
+         onout="onoutIconYT"
+
+         height="35"
+         width="35"
+         />
+  <action name="onhoverIconYT">
+    showtooltip('hotspot');
+  </action>
+  <action name="onoverIconYT">
+tween(scale, 1.2);
+tween(alpha, 1);
+pauseautorotation(forcehotspot);
+
+  </action>
+  <action name="onoutIconYT">
+    hideTooltip();
+    tween(scale, 1);
+    tween(alpha, 0.8);
+resumeautorotation(forcehotspot);
+
+  </action>
+
+
+
+    
+  <!-- Spot Style - DM -->
+
+
+  <style name="IconDM"
+         url="%FIRSTXML%/spots/ui_spot_dm_user_defaultpoint4.png"
+         visible="false"
+         edge="bottom" ox="0" oy="0"
+         zoom="true"
+
+         alpha="0.8"
+         onloaded="if(scene[get(xml.scene)].planar,if(zoom,set(zoom, false);););"
+         onhover="onhoverIconDM"
+         onover="onoverIconDM"
+         onout="onoutIconDM"
+
+
+         width="100"
+         height="prop"
+         />
+  <action name="onhoverIconDM">
+    showtooltip('hotspot');
+  </action>
+  <action name="onoverIconDM">
+
+tween(alpha, 1);
+pauseautorotation(forcehotspot);
+
+  </action>
+  <action name="onoutIconDM">
+    hideTooltip();
+
+    tween(alpha, 0.8);
+resumeautorotation(forcehotspot);
+
+  </action>
+
+
+
+    
+  <!-- Spot Style - VideoCollect -->
+
+
+  <style name="IconVideoCollect"
+         url="%FIRSTXML%/spots/ui_spot_videocollect_user_defaultpoint5.png"
+         visible="false"
+         edge="bottom" ox="0" oy="0"
+         zoom="true"
+
+         alpha="0.8"
+         onloaded="if(scene[get(xml.scene)].planar,if(zoom,set(zoom, false);););"
+         onhover="onhoverIconVideoCollect"
+         onover="onoverIconVideoCollect"
+         onout="onoutIconVideoCollect"
+
+
+         width="100"
+         height="prop"
+         />
+  <action name="onhoverIconVideoCollect">
+    showtooltip('hotspot');
+  </action>
+  <action name="onoverIconVideoCollect">
+
+tween(alpha, 1);
+pauseautorotation(forcehotspot);
+
+  </action>
+  <action name="onoutIconVideoCollect">
+    hideTooltip();
+
+    tween(alpha, 0.8);
+resumeautorotation(forcehotspot);
+
+  </action>
+
+
+
+    
+  <!-- Spot Style - Booking -->
+
+
+  <style name="IconBooking"
+         url="%FIRSTXML%/spots/ui_spot_book_user_defaultpoint6.png"
+         visible="false"
+         edge="bottom" ox="0" oy="0"
+         zoom="true"
+
+         alpha="0.8"
+         onloaded="if(scene[get(xml.scene)].planar,if(zoom,set(zoom, false);););"
+         onhover="onhoverIconBooking"
+         onover="onoverIconBooking"
+         onout="onoutIconBooking"
+
+
+         width="100"
+         height="prop"
+         />
+  <action name="onhoverIconBooking">
+    showtooltip('hotspot');
+  </action>
+  <action name="onoverIconBooking">
+
+tween(alpha, 1);
+pauseautorotation(forcehotspot);
+
+  </action>
+  <action name="onoutIconBooking">
+    hideTooltip();
+
+    tween(alpha, 0.8);
+resumeautorotation(forcehotspot);
+
+  </action>
+
+
+
+    
+  <!-- Spot Style - move_carpark1 -->
+
+
+  <style name="Iconmove_carpark1"
+         url="%FIRSTXML%/spots/ui_move_carpark1_user_defaultpoint7.png"
+         visible="false"
+         edge="center"
+         alpha="0.8"
+         onloaded="showPermanentTooltip(touch);"
+         onhover="onhoverIconmove_carpark1"
+         onover="onoverIconmove_carpark1"
+         onout="onoutIconmove_carpark1"
+
+
+         width="150"
+         height="prop"
+         />
+  <action name="onhoverIconmove_carpark1">
+    showtooltip('hotspot');
+  </action>
+  <action name="onoverIconmove_carpark1">
+tween(scale, 1.2);
+tween(alpha, 1);
+pauseautorotation(forcehotspot);
+
+  </action>
+  <action name="onoutIconmove_carpark1">
+    hideTooltip();
+    tween(scale, 1);
+    tween(alpha, 0.8);
+resumeautorotation(forcehotspot);
+
+  </action>
+
+
+
+<!-- ********** -->
+<!-- Gallery_photo -->
+<!-- id : gallery -->
+<!-- ********** -->
+
+<ptplugin name="gallery" engine="kolorBox">
+	<settings>
+		<option name="position" value="center" type="string" />
+		<option name="margin_x" value="0" type="int" />
+		<option name="margin_y" value="0" type="int" />
+		<option name="external_padding" value="15" type="int" />
+		<option name="draggable_box" value="false" type="bool" />
+		<option name="slideshow_autoplay" value="false" type="bool" />
+		<option name="slideshow" value="5000" type="int" />
+		<option name="container_auto_size" value="true" type="bool" />
+		<option name="container_width" value="100" type="int" />
+		<option name="container_width_unit" value="percent" type="string" />
+		<option name="container_height" value="100" type="int" />
+		<option name="container_height_unit" value="percent" type="string" />
+		<option name="container_color" value="ffffff" type="string" />
+		<option name="container_alpha" value="0.80000000000000004" type="float" />
+		<option name="container_topleft_border_radius" value="15" type="int" />
+		<option name="container_topright_border_radius" value="15" type="int" />
+		<option name="container_bottomleft_border_radius" value="15" type="int" />
+		<option name="container_bottomright_border_radius" value="15" type="int" />
+		<option name="container_border_width" value="0" type="int" />
+		<option name="container_border_color" value="ffffff" type="string" />
+		<option name="container_border_alpha" value="1" type="float" />
+		<option name="overlay_displayed" value="true" type="bool" />
+		<option name="overlay_color" value="000000" type="string" />
+		<option name="overlay_alpha" value="0.50000762951094835" type="float" />
+
+		<option name="item_border_width" value="0" type="int" />
+		<option name="item_border_color" value="ffffff" type="string" />
+		<option name="item_border_alpha" value="1" type="float" />
+		
+		<option name="title_displayed" value="false" type="bool" />
+		
+		<option name="caption_displayed" value="false" type="bool" />
+		
+		<option name="play_displayed" value="true" type="bool" />
+		<option name="play_position" value="bottomleft" type="string" />
+		<option name="play_text" value="galleryplay_text" type="string" />
+
+
+
+
+		<option name="navigation_displayed" value="true" type="bool" />
+		<option name="navigation_position" value="bottom" type="string" />
+		<option name="counter_color" value="666666" type="string" />
+		<option name="navprev_text" value="gallerynavprev_text" type="string" />
+		<option name="navnext_text" value="gallerynavnext_text" type="string" />
+
+
+
+
+		<option name="navigation_arrows" value="true" type="bool" />
+
+
+
+
+		<option name="fullscreen_displayed" value="true" type="bool" />
+		<option name="fullscreen_position" value="topleft" type="string" />
+		<option name="fullscreen_text" value="galleryfullscreen_text" type="string" />
+
+
+
+
+		<option name="close_displayed" value="true" type="bool" />
+		<option name="close_position" value="topright" type="string" />
+		<option name="close_text" value="galleryclose_text" type="string" />
+
+		<option name="close_callback" value="invokeKrFunction('closeKolorBoxCallback_gallery')" type="string" />
+		<option name="zorder" value="1" type="int" />
+		<option name="use_i18n" value="true" type="bool" />
+	</settings>
+	<internaldata>
+		<item name="item_1" title="gallerypicture_title0" caption="gallerypicture_caption0" value="indexdata/graphics/gallery/"/>
+	</internaldata>
+</ptplugin>
+
+<action name="kolorBoxJsReady_gallery">
+	set(ptplugin[gallery].jsready, true);
+</action>
+
+<action name="showGallery_gallery">
+	ifnot(ptplugin[gallery].isOpen,
+		set(ptplugin[gallery].isOpen, true);
+		set(ptplugin[gallery].doNotDeleteMe, false);
+		set(gallery_boxurl, %1);
+		pauseautorotation(forceplugin);
+
+		js(invokePluginFunction(gallery, openKolorBox, %1));
+		events.dispatch(onremovedisplayedobject);
+	,
+		if(%1 !== null AND %1 != gallery_boxurl,
+			closeKolorBox_gallery();
+			delayedcall(0.3,showGallery_gallery(%1););
+		);
+	);
+</action>
+
+<action name="toggleGallery_gallery">
+	js(invokePluginFunction(gallery, toggleKolorBox, %1));
+</action>
+
+
+<action name="closeKolorBox_gallery">
+	js(invokePluginFunction(gallery, closeKolorBox));
+</action>
+
+<action name="closeKolorBoxCallback_gallery">
+	resumeautorotation(forceplugin);
+
+	set(ptplugin[gallery].isOpen, false);
+</action>
+
+<action name="changeLanguage_gallery">
+	if(ptplugin[gallery].jsready,
+		js(invokePluginFunction(gallery, changeLanguage));
+	,
+		delayedcall(delay_gallery, 0.1, changeLanguage_gallery(););
+	);
+</action>
+
+<events name="kolorBoxEvents_gallery" 
+	keep="true"
+	changetourlanguage="changeLanguage_gallery();"
+	/>
+
+<!-- ********** -->
+<!-- Website Box -->
+<!-- id : websiteViewer -->
+<!-- ********** -->
+
+<ptplugin name="websiteViewer" engine="kolorBox">
+	<settings>
+		<option name="position" value="center" type="string" />
+		<option name="margin_x" value="0" type="int" />
+		<option name="margin_y" value="0" type="int" />
+		<option name="external_padding" value="15" type="int" />
+		<option name="draggable_box" value="false" type="bool" />
+		<option name="container_auto_size" value="true" type="bool" />
+		<option name="container_width" value="100" type="int" />
+		<option name="container_width_unit" value="percent" type="string" />
+		<option name="container_height" value="100" type="int" />
+		<option name="container_height_unit" value="percent" type="string" />
+		<option name="container_color" value="222222" type="string" />
+		<option name="container_alpha" value="0.80000000000000004" type="float" />
+		<option name="container_topleft_border_radius" value="15" type="int" />
+		<option name="container_topright_border_radius" value="15" type="int" />
+		<option name="container_bottomleft_border_radius" value="15" type="int" />
+		<option name="container_bottomright_border_radius" value="15" type="int" />
+		<option name="container_border_width" value="0" type="int" />
+		<option name="container_border_color" value="ffffff" type="string" />
+		<option name="container_border_alpha" value="1" type="float" />
+		<option name="overlay_displayed" value="true" type="bool" />
+		<option name="overlay_color" value="000000" type="string" />
+		<option name="overlay_alpha" value="0.30000762951094834" type="float" />
+
+		<option name="title_displayed" value="false" type="bool" />
+		<option name="title_position" value="top" type="string" />
+		<option name="title_font" value="Verdana" type="string" />
+		<option name="title_size" value="14" type="int" />
+		<option name="title_weight" value="normal" type="string" />
+		<option name="title_style" value="normal" type="string" />
+		<option name="title_decoration" value="none" type="string" />
+		<option name="title_color" value="000000" type="string" />
+		<option name="caption_displayed" value="false" type="bool" />
+		<option name="iframe_scrolling" value="auto" type="string" />
+		<option name="iframe_default_width" value="1100" type="int" />
+		<option name="iframe_default_height" value="800" type="int" />
+		<option name="iframe_devices_width" value="1100" type="int" />
+		<option name="iframe_devices_height" value="800" type="int" />
+		<option name="force_ios_scrolling" value="true" type="bool" />
+		<option name="fullscreen_displayed" value="false" type="bool" />
+		<option name="fullscreen_position" value="topleft" type="string" />
+		<option name="fullscreen_text" value="websiteViewerfullscreen_text" type="string" />
+
+
+
+
+		<option name="close_displayed" value="true" type="bool" />
+		<option name="close_position" value="topright" type="string" />
+		<option name="close_text" value="websiteViewerclose_text" type="string" />
+
+		<option name="close_callback" value="invokeKrFunction('closeKolorBoxCallback_websiteViewer')" type="string" />
+		<option name="zorder" value="2" type="int" />
+		<option name="use_i18n" value="true" type="bool" />
+	</settings>
+	<internaldata>
+		
+	</internaldata>
+</ptplugin>
+
+<action name="kolorBoxJsReady_websiteViewer">
+	set(ptplugin[websiteViewer].jsready, true);
+</action>
+
+<action name="openWebsite_websiteViewer">
+	ifnot(ptplugin[websiteViewer].isOpen,
+		set(ptplugin[websiteViewer].isOpen, true);
+		set(ptplugin[websiteViewer].doNotDeleteMe, false);
+		getmessage(websiteViewer_boxurl, %1);
+		txtadd(websiteViewer_boxurl, ?iframe=true);
+		pauseautorotation(forceplugin);
+
+		js(invokePluginFunction(websiteViewer, loadSingleArrayItem, get(websiteViewer_boxurl), %2));
+		events.dispatch(onremovedisplayedobject);
+	,
+		if('%1' != websiteViewer_boxurl,
+			closeKolorBox_websiteViewer();
+			delayedcall(0.3,openWebsite_websiteViewer(%1,%2););
+		);
+	);
+</action>
+
+<action name="toggleWebsite_websiteViewer">
+	js(invokePluginFunction(websiteViewer, toggleKolorBox, %1));
+</action>
+
+
+<action name="closeKolorBox_websiteViewer">
+	js(invokePluginFunction(websiteViewer, closeKolorBox));
+</action>
+
+<action name="closeKolorBoxCallback_websiteViewer">
+	resumeautorotation(forceplugin);
+
+	set(ptplugin[websiteViewer].isOpen, false);
+</action>
+
+<action name="changeLanguage_websiteViewer">
+	if(ptplugin[websiteViewer].jsready,
+		stopdelayedcall(delay_websiteViewer);
+		js(invokePluginFunction(websiteViewer, changeLanguage));
+	,
+		delayedcall(delay_websiteViewer, 0.1, changeLanguage_websiteViewer(););
+	);
+</action>
+
+<events name="kolorBoxEvents_websiteViewer" 
+	keep="true"
+	changetourlanguage="changeLanguage_websiteViewer();"
+	/>
+ 
+    <!-- ********** -->
+    <!-- Core -->
+    <!-- id : CY_Core -->
+    <!-- ********** --> 
+    <action name="set_class" type="Javascript">
+        caller.sprite.className = args[1];
+    </action>
+    <action name="set_id" type="Javascript">
+        caller.sprite.id = args[1];
+    </action>
+    <action name="add_html_code" type="Javascript">
+        <![CDATA[
+            var div = document.createElement("div");
+            // basic styles to fit into the layer size and allow scrolling:
+            div.className= args[2];
+            // hacks for browsed-based mouse-wheel and touch-scrolling support:
+            div.addEventListener("mousewheel", function(event){ event.stopPropagation(); }, true);
+            div.addEventListener("DOMMouseScroll", function(event){ event.stopPropagation(); }, true);
+            div.addEventListener("touchstart", function(event){ if(krpano.device.ios && window.innerHeight == krpano.display.htmltarget.offsetHeight){ /* avoid the iOS 'overscrolling' for fullpage viewers */ var bs = document.body.parentNode.style; bs.position="fixed"; bs.top=0; bs.left=0; bs.right=0; bs.bottom=0; } krpano.control.preventTouchEvents = false; event.stopPropagation(); }, true);
+            div.addEventListener("touchend", function(event){ krpano.control.preventTouchEvents = true; event.stopPropagation(); }, true);
+            div.addEventListener("gesturestart", function(event){ event.preventDefault(); }, true);
+            // add some html code:
+            div.innerHTML = args[1];
+            // add the div to the layer element:
+            caller.sprite.appendChild(div);
+        ]]>
+    </action> 
+    <!-- ********** -->
+    <!-- Sidebar -->
+    <!-- id : CY_Sidebar -->
+    <!-- ********** --> 
+    <events name="CY_Sidebar_events_default" 
+        keep="true"
+        onTourStart="CY_Sidebar_init"
+        />
+    <events name="CY_Sidebar_events"
+        keep="true"
+        devices="desktop"
+        onloadcomplete="CY_Sidebar_callingOnce"
+        />
+    <events name="CY_Sidebar_events"
+        keep="true"
+        devices="tablet"
+        onloadcomplete="CY_Sidebar_callingOnce"
+        onmousedown="CY_Sidebar_close();"
+        />
+    <events name="CY_Sidebar_events"
+        keep="true"
+        devices="mobile"
+        onloadcomplete="CY_Sidebar_callingOnce"
+        onmousedown="CY_Sidebar_close();"
+        />
+    <action name="CY_Sidebar_callingOnce">
+        if(CY_Sidebar_firstTime === '1',
+            CY_Sidebar_waitingForCountHeight();
+            CY_Sidebar_menu();
+        );
+    </action>
+    <action name="CY_Sidebar_init">
+        def(CY_Sidebar_firstTime, string, 1);
+        def(CY_Sidebar_isLoad, boolean, false);
+        CY_Sidebar_addFile();
+        CY_Sidebar_createStyle();
+        CY_Sidebar_createScript();
+    </action>
+    <action name="CY_Sidebar_addFile" type="Javascript">
+        <![CDATA[
+            $(document).ready(function(){
+                var CY_Sidebarstyle = document.createElement("link");
+                CY_Sidebarstyle.type = "text/css";
+                CY_Sidebarstyle.rel = "stylesheet";
+                CY_Sidebarstyle.href  = "indexdata/graphics/cy_sidebar/style/sidebar.css";
+                $("head").append(CY_Sidebarstyle);
+
+                var CY_Sidebarscript = document.createElement("script");
+                CY_Sidebarscript.type = "text/javascript";
+                CY_Sidebarscript.src = "indexdata/graphics/cy_sidebar/js/sidebar.js";
+                $("head").append(CY_Sidebarscript);
+            });
+        ]]>
+    </action>
+    <action name="CY_Sidebar_createStyle" type="Javascript">
+        var style = document.createElement("style");
+        style.type = "text/css"
+        style.innerHTML = `
+        #CY_Sidebar_outputMenu{
+            height: 100%;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        .CY_Sidebar_scrollbarStyle{
+            width: 100%;
+            height: 100%;
+            overflow: hidden auto;
+            box-sizing: border-box;
+            padding: 0px 0px 0px 0px;
+            user-select: text;
+            direction: rtl;
+        }
+        .CY_Sidebar_scrollbarStyle::-webkit-scrollbar {
+            width: 0px !important;
+        }
+        .CY_Sidebar_scrollbarStyle::-webkit-scrollbar-track {
+            -webkit-border-radius: 5px !important;
+            -ms-border-radius: 5px !important;
+            border-radius: 5px !important;
+        }
+        .CY_Sidebar_scrollbarStyle::-webkit-scrollbar-thumb {
+            -webkit-border-radius: 5px !important;
+            border-radius: 5px !important;
+            background: #048900 !important;
+        }
+        .CY_Sidebar_buttonsStyle{
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            display: flex;
+            flex-wrap: nowrap;
+            align-items: flex-start;
+            justify-content: center;
+        }
+        #CY_Sidebar_outputButtons{
+            overflow: hidden;
+            display: flex;
+            flex-wrap: nowrap;
+        }
+        .desktop{
+            width: 170px;
+            height: 100px;
+            margin: 0px;
+        }
+        .tablet{
+            width: 150px;
+            height: 80px;
+            margin: 0px;
+        }
+        .mobile{
+            width: 220px;
+            height: 100px;
+            margin: 0px;
+        }
+        .textStyle_1_default{
+            box-sizing: border-box;
+            text-shadow: 1px 1px 2px #000000;
+            color: #ffffff;
+            font-family: Century Gothic;
+            font-size: 14px;
+            padding: 10px 20px 10px 50px;
+        }
+        .textStyle_1_default:hover{
+            box-sizing: border-box;
+            text-shadow: 1px 1px 2px #000000;
+            color: #fbc73b;
+            font-family: Century Gothic;
+            font-weight: bold;
+            font-size: 14px;
+            padding: 10px 20px 10px 50px;
+        }    
+        `
+        $("head").append(style);
+    </action>
+    <action name="CY_Sidebar_waitingForCountHeight">
+        if(CY_Sidebar_isLoad,
+            CY_Sidebar_countHeight();
+            CY_Sidebar_onloadComplete();
+        );
+        if(CY_Sidebar_firstTime === '1',
+            delayedcall(0.2, CY_Sidebar_waitingForCountHeight());
+        );
+    </action>
+    <action name="CY_Sidebar_onloadComplete" devices="desktop">
+        CY_Sidebar_buttons();
+        CY_Sidebar_open();
+        set(CY_Sidebar_firstTime, 0);
+    </action>
+    <action name="CY_Sidebar_onloadComplete" devices="tablet">
+        CY_Sidebar_buttons();
+        set(events[CY_Sidebar_events].onremovepano, CY_Sidebar_close());
+        set(CY_Sidebar_firstTime, 0);
+    </action>
+    <action name="CY_Sidebar_onloadComplete" devices="mobile">
+        CY_Sidebar_buttons();
+        set(events[CY_Sidebar_events].onremovepano, CY_Sidebar_close());
+        set(CY_Sidebar_firstTime, 0);
+    </action>
+    <action name="CY_Sidebar_countHeight">
+        set(layer[CY_Sidebar_block02].y, get(layer[CY_Sidebar_block01].pixelheight));
+        set(layer[CY_Sidebar_block03].y, calc(layer[CY_Sidebar_block01].pixelheight + layer[CY_Sidebar_block02].pixelheight));
+        set(layer[CY_Sidebar_block02].height, calc(layer[CY_Sidebar_layer].pixelheight - layer[CY_Sidebar_block01].pixelheight - layer[CY_Sidebar_block03].pixelheight ));
+        set(layer[CY_Sidebar_block02].y, get(layer[CY_Sidebar_block01].height));
+        set(layer[CY_Sidebar_block03].y, calc(layer[CY_Sidebar_block01].pixelheight + layer[CY_Sidebar_block02].height));
+    </action>
+    <layer name="CY_Sidebar_layer" 
+        type="container"
+        devices="desktop"
+        keep="true"
+        align="left"
+        x="-170"
+        y="0px"
+        zorder="98"
+        visible="true"
+        height="100%"
+        width="170"
+        background="true"
+        bgcapture="true"
+        handcursor="false"
+        bgcolor="0x030303"
+        bgalpha="0.7000076295109483"
+        onloaded="set_class(get(name));"
+        />
+    <layer name="CY_Sidebar_layer"
+        type="container"
+        devices="tablet"
+        keep="true"
+        align="left"
+        x="-150"
+        y="0px"
+        zorder="98"
+        visible="true"
+        height="100%"
+        width="150"
+        background="true"
+        bgcapture="true"
+        handcursor="false"
+        bgcolor="0x030303"
+        bgalpha="0.7000076295109483"
+        onloaded="set_class(get(name));"
+        />
+    <layer name="CY_Sidebar_layer"
+        type="container"
+        devices="mobile"
+        keep="true"
+        align="left"
+        x="-30%"
+        y="0px"
+        zorder="98"
+        visible="true"
+        height="100%"
+        width="30%"
+        background="true"
+        bgcapture="true"
+        handcursor="false"
+        bgcolor="0x030303"
+        bgalpha="0.7000076295109483"
+        onloaded="set_class(get(name));"
+        />
+    <data name="CY_Sidebar_createMenuContent"><![CDATA[<div id="CY_Sidebar_outputMenu">]]></data>
+    <data name="CY_Sidebar_createButtonsContent"><![CDATA[<div id="CY_Sidebar_outputButtons">]]></data>
+    <layer name="CY_Sidebar_block01" 
+        type="container"
+        keep="true"
+        blockType="logo"
+        parent="CY_Sidebar_layer"
+        devices="desktop|tablet|mobile"
+        align="top"
+        x="0px"
+        y="0px"
+        width="100%"
+        height="prop"
+        visible="true"
+        background="true" 
+        bgcapture="true"
+        handcursor="false"
+        onloaded="set_class(get(name));"
+        />
+    <layer name="CY_Sidebar_block02" 
+        type="container"
+        keep="true"
+        blockType="menu"
+        parent="CY_Sidebar_layer"
+        devices="desktop|tablet|mobile"
+        align="top"
+        x="0px"
+        y="0px"
+        width="100%"
+        height="100%"
+        visible="true"
+        background="true" 
+        bgcapture="true"
+        handcursor="false"
+        bgcolor="0x030303"
+        bgalpha="0.40000000000000002"
+        onloaded="set_class(get(name));add_html_code(get(data[CY_Sidebar_createMenuContent].content), 'CY_Sidebar_scrollbarStyle sidebar');"
+        />
+    <layer name="CY_Sidebar_block03" 
+        type="container"
+        keep="true"
+        blockType="button"
+        parent="CY_Sidebar_layer"
+        devices="desktop|tablet|mobile"
+        align="top"
+        x="0px"
+        y="0px"
+        width="100%"
+        height="150"
+        visible="true"
+        background="true" 
+        bgcapture="true"
+        handcursor="false"
+        bgcolor="0x030303"
+        bgalpha="0.40000000000000002"
+        onloaded="set_class(get(name));add_html_code(get(data[CY_Sidebar_createButtonsContent].content), 'CY_Sidebar_buttonsStyle sidebar');"
+        />
+    <action name="CY_Sidebar_setHieght">
+        set(layer[%2].height, %1);
+    </action>
+    <action name="CY_Sidebar_setLogoHeight" type="Javascript" autorun="preinit">
+        krpano.actions.setlogoheight = function(block) {
+            let tolower = ".CY_Sidebar_logo".toLowerCase();
+            krpano.set("CY_Sidebar_isLoad", true);
+            krpano.call("CY_Sidebar_setHieght(" + document.querySelector(tolower).style.height + ", "+ block +")");
+            krpano.call("set(layer[CY_Sidebar_logo_hover].parent, layer[CY_Sidebar_block01]);");
+            krpano.call("set(layer[CY_Sidebar_logo_hover].height, get(layer[CY_Sidebar_logo_hover].height));");
+        };
+    </action>
+    <layer name="CY_Sidebar_logo"
+        keep="true"
+        type="image"
+        x="0px"
+        y="0px"
+        visible="true"
+        width="100%"
+        height="prop"
+        url="%FIRSTXML%/graphics/cy_sidebar/logo_top.png"
+        onloaded="set_class(get(name));
+        if(layer[CY_Sidebar_block01].blockType === 'logo',
+            set(layer[CY_Sidebar_logo].parent, layer[CY_Sidebar_block01]);
+            if(layer[CY_Sidebar_block01].height === 'prop',
+                delayedcall(0.1,
+                    setlogoheight('CY_Sidebar_block01');
+                );
+                ,
+                 set(layer[CY_Sidebar_logo].height, get(layer[CY_Sidebar_block01].height)); 
+            );
+        );
+        if(layer[CY_Sidebar_block02].blockType === 'logo',
+            set(layer[CY_Sidebar_logo].parent, layer[CY_Sidebar_block02]);
+            if(layer[CY_Sidebar_block02].height === 'prop',
+                delayedcall(0.1,
+                    setlogoheight('CY_Sidebar_block02');
+                );
+                ,
+                 set(layer[CY_Sidebar_logo].height, get(layer[CY_Sidebar_block02].height)); 
+            );
+        );
+        if(layer[CY_Sidebar_block03].blockType === 'logo',
+            set(layer[CY_Sidebar_logo].parent, layer[CY_Sidebar_block03]);
+            if(layer[CY_Sidebar_block03].height === 'prop',
+                delayedcall(0.1,
+                    setlogoheight('CY_Sidebar_block03');
+                );
+                ,
+                 set(layer[CY_Sidebar_logo].height, get(layer[CY_Sidebar_block03].height)); 
+            );
+        );"
+        onclick="CY_Sidebar_logo_action"
+        />
+    <action name="CY_Sidebar_logo_action">getmessage(urltoopen,CY_Sidebarlogo_actionchooserID10464openurlwebsiteurl);openurl(get(urltoopen),_blank);
+
+
+    </action>
+    <action name="CY_Sidebar_createScript" type="Javascript">
+        <![CDATA[
+            var newscript = document.createElement('script');
+            newscript.type = 'text/javascript';
+            newscript.innerHTML = `
+                let CY_SidebarlastClick = ''
+                callingkrpano = document.getElementById("krpanoSWFObject");
+                function callKrpano(action){
+                    callingkrpano.call(action);
+                }
+                function toggleChild(id, clickid){
+                    sidebarClearAllClickActive();
+                    sidebarHideChildAll();
+                    if(CY_SidebarlastClick != '' && CY_SidebarlastClick == id){
+                        sidebarHideChild(id);
+                        clickid != undefined && (sidebarHideClick(clickid));
+                        CY_SidebarlastClick = ''
+                        return ;
+                    }
+                    clickid != undefined && (sidebarToggleClick(clickid));
+                    document.querySelectorAll('.' + id).forEach(element => {
+                        element.classList.toggle('isHide');
+                    });
+                    CY_SidebarlastClick = id
+                }
+            `
+            $("head").append(newscript);
+        ]]>
+    </action>
+    <action name="CY_Sidebar_menu" type="Javascript">
+        <![CDATA[
+            $(document).ready(function(){
+                let result = document.querySelector("#CY_Sidebar_outputMenu")
+                if(result != null){
+                    let items_menu_1 = document.createElement('div');
+                    items_menu_1.id="menu_1"; 
+                    items_menu_1.innerHTML = `
+                    <div class="item" onclick="toggleChild('menu_1');callKrpano('CY_Sidebar_menu_1_action');">
+                        <div class='front front-anim' id='menu_1_front'>
+                            <img src='./indexdata/graphics/cy_sidebar/ui_menu_1.png' />
+                        </div>
+                        <div class='back back-anim' id='menu_1_back'>
+                            <img src='./indexdata/graphics/cy_sidebar/ui_menu_1_hover.png' />
+                        </div>
+                    </div> 
+                    `
+                    result.appendChild(items_menu_1)
+                    let items_menu_2 = document.createElement('div');
+                    items_menu_2.id="menu_2"; 
+                    items_menu_2.innerHTML = `
+                    <div class="item" onclick="toggleChild('menu_2');callKrpano('CY_Sidebar_menu_2_action');">
+                        <div class='front front-anim' id='menu_2_front'>
+                            <img src='./indexdata/graphics/cy_sidebar/ui_menu_2.png' />
+                        </div>
+                        <div class='back back-anim' id='menu_2_back'>
+                            <img src='./indexdata/graphics/cy_sidebar/ui_menu_2_hover.png' />
+                        </div>
+                    </div> 
+                    `
+                    result.appendChild(items_menu_2)
+                    let items_menu_3 = document.createElement('div');
+                    items_menu_3.id="menu_3"; 
+                    items_menu_3.innerHTML = `
+                    <div class="item" onclick="toggleChild('menu_3');callKrpano('CY_Sidebar_menu_3_action');">
+                        <div class='front front-anim' id='menu_3_front'>
+                            <img src='./indexdata/graphics/cy_sidebar/ui_menu_3.png' />
+                        </div>
+                        <div class='back back-anim' id='menu_3_back'>
+                            <img src='./indexdata/graphics/cy_sidebar/ui_menu_3_hover.png' />
+                        </div>
+                    </div> 
+                    `
+                    result.appendChild(items_menu_3)
+                    let items_menu_4 = document.createElement('div');
+                    items_menu_4.id="menu_4"; 
+                    items_menu_4.innerHTML = `
+                    <div class="item" onclick="toggleChild('menu_4', 'menu_4_click');">
+                        <div class='front front-anim' id='menu_4_front'>
+                            <img src='./indexdata/graphics/cy_sidebar/ui_menu_4.png' />
+                        </div>
+                        <div class='back back-anim' id='menu_4_back'>
+                            <img src='./indexdata/graphics/cy_sidebar/ui_menu_4_hover.png' />
+                        </div>
+                        <div class='click' id='menu_4_click'>
+                            <img src='./indexdata/graphics/cy_sidebar/ui_menu_4_click.png' />
+                        </div>
+                    </div> 
+                    `
+                    result.appendChild(items_menu_4)
+                    let items_menu_4_1 = document.createElement('div');
+                    items_menu_4_1.id="menu_4_1"; 
+                    items_menu_4_1.innerHTML = `
+                    <div class="item child isHide menu_4" onclick="callKrpano('CY_Sidebar_menu_4_1_action');">
+                        <div class='front front-anim' id='menu_4_1_front'>
+                            <img src='./indexdata/graphics/cy_sidebar/ui_menu_4_1.png' />
+                        </div>
+                        <div class='back back-anim' id='menu_4_1_back'>
+                            <img src='./indexdata/graphics/cy_sidebar/ui_menu_4_1_hover.png' />
+                        </div>
+                    </div> 
+                    `
+                    result.appendChild(items_menu_4_1)
+                    let items_menu_4_2 = document.createElement('div');
+                    items_menu_4_2.id="menu_4_2"; 
+                    items_menu_4_2.innerHTML = `
+                    <div class="item child isHide menu_4" onclick="callKrpano('CY_Sidebar_menu_4_2_action');">
+                        <div class='front front-anim' id='menu_4_2_front'>
+                            <img src='./indexdata/graphics/cy_sidebar/ui_menu_4_2.png' />
+                        </div>
+                        <div class='back back-anim' id='menu_4_2_back'>
+                            <img src='./indexdata/graphics/cy_sidebar/ui_menu_4_2_hover.png' />
+                        </div>
+                    </div> 
+                    `
+                    result.appendChild(items_menu_4_2)
+                    let items_menu_4_3 = document.createElement('div');
+                    items_menu_4_3.id="menu_4_3"; 
+                    items_menu_4_3.innerHTML = `
+                    <div class="item child isHide menu_4" onclick="callKrpano('CY_Sidebar_menu_4_3_action');">
+                        <div class='front front-anim' id='menu_4_3_front'>
+                            <img src='./indexdata/graphics/cy_sidebar/ui_menu_4_3.png' />
+                        </div>
+                        <div class='back back-anim' id='menu_4_3_back'>
+                            <img src='./indexdata/graphics/cy_sidebar/ui_menu_4_3_hover.png' />
+                        </div>
+                    </div> 
+                    `
+                    result.appendChild(items_menu_4_3)
+                    let items_menu_4_4 = document.createElement('div');
+                    items_menu_4_4.id="menu_4_4"; 
+                    items_menu_4_4.innerHTML = `
+                    <div class="item child isHide menu_4" onclick="">
+                        <div class='front front-anim' id='menu_4_4_front'>
+                            <img src='./indexdata/graphics/cy_sidebar/ui_menu_4_4.png' />
+                        </div>
+                        <div class='back back-anim' id='menu_4_4_back'>
+                            <img src='./indexdata/graphics/cy_sidebar/ui_menu_4_4_hover.png' />
+                        </div>
+                    </div> 
+                    `
+                    result.appendChild(items_menu_4_4)
+                    let items_menu_4_5 = document.createElement('div');
+                    items_menu_4_5.id="menu_4_5"; 
+                    items_menu_4_5.innerHTML = `
+                    <div class="item child isHide menu_4" onclick="">
+                        <div class='front front-anim' id='menu_4_5_front'>
+                            <img src='./indexdata/graphics/cy_sidebar/ui_menu_4_5.png' />
+                        </div>
+                        <div class='back back-anim' id='menu_4_5_back'>
+                            <img src='./indexdata/graphics/cy_sidebar/ui_menu_4_5_hover.png' />
+                        </div>
+                    </div> 
+                    `
+                    result.appendChild(items_menu_4_5)
+                    let items_menu_4_6 = document.createElement('div');
+                    items_menu_4_6.id="menu_4_6"; 
+                    items_menu_4_6.innerHTML = `
+                    <div class="item child isHide menu_4" onclick="callKrpano('CY_Sidebar_menu_4_6_action');">
+                        <div class='front front-anim' id='menu_4_6_front'>
+                            <img src='./indexdata/graphics/cy_sidebar/ui_menu_4_6.png' />
+                        </div>
+                        <div class='back back-anim' id='menu_4_6_back'>
+                            <img src='./indexdata/graphics/cy_sidebar/ui_menu_4_6_hover.png' />
+                        </div>
+                    </div> 
+                    `
+                    result.appendChild(items_menu_4_6)
+                    let items_menu_4_7 = document.createElement('div');
+                    items_menu_4_7.id="menu_4_7"; 
+                    items_menu_4_7.innerHTML = `
+                    <div class="item child isHide menu_4" onclick="">
+                        <div class='front front-anim' id='menu_4_7_front'>
+                            <img src='./indexdata/graphics/cy_sidebar/ui_menu_4_7.png' />
+                        </div>
+                        <div class='back back-anim' id='menu_4_7_back'>
+                            <img src='./indexdata/graphics/cy_sidebar/ui_menu_4_7_hover.png' />
+                        </div>
+                    </div> 
+                    `
+                    result.appendChild(items_menu_4_7)
+                    let items_menu_4_8 = document.createElement('div');
+                    items_menu_4_8.id="menu_4_8"; 
+                    items_menu_4_8.innerHTML = `
+                    <div class="item child isHide menu_4" onclick="">
+                        <div class='front front-anim' id='menu_4_8_front'>
+                            <img src='./indexdata/graphics/cy_sidebar/ui_menu_4_8.png' />
+                        </div>
+                        <div class='back back-anim' id='menu_4_8_back'>
+                            <img src='./indexdata/graphics/cy_sidebar/ui_menu_4_8_hover.png' />
+                        </div>
+                    </div> 
+                    `
+                    result.appendChild(items_menu_4_8)
+                    let items_menu_4_9 = document.createElement('div');
+                    items_menu_4_9.id="menu_4_9"; 
+                    items_menu_4_9.innerHTML = `
+                    <div class="item child isHide menu_4" onclick="">
+                        <div class='front front-anim' id='menu_4_9_front'>
+                            <img src='./indexdata/graphics/cy_sidebar/ui_menu_4_9.png' />
+                        </div>
+                        <div class='back back-anim' id='menu_4_9_back'>
+                            <img src='./indexdata/graphics/cy_sidebar/ui_menu_4_9_hover.png' />
+                        </div>
+                    </div> 
+                    `
+                    result.appendChild(items_menu_4_9)
+                    let items_menu_4_10 = document.createElement('div');
+                    items_menu_4_10.id="menu_4_10"; 
+                    items_menu_4_10.innerHTML = `
+                    <div class="item child isHide menu_4" onclick="">
+                        <div class='front front-anim' id='menu_4_10_front'>
+                            <img src='./indexdata/graphics/cy_sidebar/ui_menu_4_10.png' />
+                        </div>
+                        <div class='back back-anim' id='menu_4_10_back'>
+                            <img src='./indexdata/graphics/cy_sidebar/ui_menu_4_10_hover.png' />
+                        </div>
+                    </div> 
+                    `
+                    result.appendChild(items_menu_4_10)
+                    let items_menu_4_11 = document.createElement('div');
+                    items_menu_4_11.id="menu_4_11"; 
+                    items_menu_4_11.innerHTML = `
+                    <div class="item child isHide menu_4" onclick="">
+                        <div class='front front-anim' id='menu_4_11_front'>
+                            <img src='./indexdata/graphics/cy_sidebar/ui_menu_4_11.png' />
+                        </div>
+                        <div class='back back-anim' id='menu_4_11_back'>
+                            <img src='./indexdata/graphics/cy_sidebar/ui_menu_4_11_hover.png' />
+                        </div>
+                    </div> 
+                    `
+                    result.appendChild(items_menu_4_11)
+                    let items_menu_4_12 = document.createElement('div');
+                    items_menu_4_12.id="menu_4_12"; 
+                    items_menu_4_12.innerHTML = `
+                    <div class="item child isHide menu_4" onclick="">
+                        <div class='front front-anim' id='menu_4_12_front'>
+                            <img src='./indexdata/graphics/cy_sidebar/ui_menu_4_12.png' />
+                        </div>
+                        <div class='back back-anim' id='menu_4_12_back'>
+                            <img src='./indexdata/graphics/cy_sidebar/ui_menu_4_12_hover.png' />
+                        </div>
+                    </div> 
+                    `
+                    result.appendChild(items_menu_4_12)
+                    let items_menu_4_13 = document.createElement('div');
+                    items_menu_4_13.id="menu_4_13"; 
+                    items_menu_4_13.innerHTML = `
+                    <div class="item child isHide menu_4" onclick="">
+                        <div class='front front-anim' id='menu_4_13_front'>
+                            <img src='./indexdata/graphics/cy_sidebar/ui_menu_4_13.png' />
+                        </div>
+                        <div class='back back-anim' id='menu_4_13_back'>
+                            <img src='./indexdata/graphics/cy_sidebar/ui_menu_4_13_hover.png' />
+                        </div>
+                    </div> 
+                    `
+                    result.appendChild(items_menu_4_13)
+                    let items_menu_4_14 = document.createElement('div');
+                    items_menu_4_14.id="menu_4_14"; 
+                    items_menu_4_14.innerHTML = `
+                    <div class="item child isHide menu_4" onclick="">
+                        <div class='front front-anim' id='menu_4_14_front'>
+                            <img src='./indexdata/graphics/cy_sidebar/ui_menu_4_14.png' />
+                        </div>
+                        <div class='back back-anim' id='menu_4_14_back'>
+                            <img src='./indexdata/graphics/cy_sidebar/ui_menu_4_14_hover.png' />
+                        </div>
+                    </div> 
+                    `
+                    result.appendChild(items_menu_4_14)
+                    let items_menu_5 = document.createElement('div');
+                    items_menu_5.id="menu_5"; 
+                    items_menu_5.innerHTML = `
+                    <div class="item" onclick="toggleChild('menu_5');callKrpano('CY_Sidebar_menu_5_action');">
+                        <div class='front front-anim' id='menu_5_front'>
+                            <img src='./indexdata/graphics/cy_sidebar/ui_menu_5.png' />
+                        </div>
+                        <div class='back back-anim' id='menu_5_back'>
+                            <img src='./indexdata/graphics/cy_sidebar/ui_menu_5_hover.png' />
+                        </div>
+                    </div> 
+                    `
+                    result.appendChild(items_menu_5)
+                    let items_menu_6 = document.createElement('div');
+                    items_menu_6.id="menu_6"; 
+                    items_menu_6.innerHTML = `
+                    <div class="item" onclick="toggleChild('menu_6');callKrpano('CY_Sidebar_menu_6_action');">
+                        <div class='front front-anim' id='menu_6_front'>
+                            <img src='./indexdata/graphics/cy_sidebar/ui_menu_6.png' />
+                        </div>
+                        <div class='back back-anim' id='menu_6_back'>
+                            <img src='./indexdata/graphics/cy_sidebar/ui_menu_6_hover.png' />
+                        </div>
+                    </div> 
+                    `
+                    result.appendChild(items_menu_6)
+                    let items_menu_7 = document.createElement('div');
+                    items_menu_7.id="menu_7"; 
+                    items_menu_7.innerHTML = `
+                    <div class="item" onclick="toggleChild('menu_7');callKrpano('CY_Sidebar_menu_7_action');">
+                        <div class='front front-anim' id='menu_7_front'>
+                            <img src='./indexdata/graphics/cy_sidebar/ui_menu_7.png' />
+                        </div>
+                        <div class='back back-anim' id='menu_7_back'>
+                            <img src='./indexdata/graphics/cy_sidebar/ui_menu_7_hover.png' />
+                        </div>
+                    </div> 
+                    `
+                    result.appendChild(items_menu_7)
+                    let items_menu_8 = document.createElement('div');
+                    items_menu_8.id="menu_8"; 
+                    items_menu_8.innerHTML = `
+                    <div class="item" onclick="toggleChild('menu_8');callKrpano('CY_Sidebar_menu_8_action');">
+                        <div class='front front-anim' id='menu_8_front'>
+                            <img src='./indexdata/graphics/cy_sidebar/ui_menu_8.png' />
+                        </div>
+                        <div class='back back-anim' id='menu_8_back'>
+                            <img src='./indexdata/graphics/cy_sidebar/ui_menu_8_hover.png' />
+                        </div>
+                    </div> 
+                    `
+                    result.appendChild(items_menu_8)
+                    let items_menu_9 = document.createElement('div');
+                    items_menu_9.id="menu_9"; 
+                    items_menu_9.innerHTML = `
+                    <div class="item" onclick="toggleChild('menu_9');callKrpano('CY_Sidebar_menu_9_action');">
+                        <div class='front front-anim' id='menu_9_front'>
+                            <img src='./indexdata/graphics/cy_sidebar/ui_menu_9.png' />
+                        </div>
+                        <div class='back back-anim' id='menu_9_back'>
+                            <img src='./indexdata/graphics/cy_sidebar/ui_menu_9_hover.png' />
+                        </div>
+                    </div> 
+                    `
+                    result.appendChild(items_menu_9)
+                }
+            })
+        ]]>
+    </action>
+    <action name="CY_Sidebar_buttons" type="Javascript" devices="desktop">
+        <![CDATA[
+            $(document).ready(function(){
+                let result = document.querySelector('#CY_Sidebar_outputButtons');
+                if(result != null){
+                    let buttons_langSwitch = document.createElement('div')
+                    buttons_langSwitch.id="langSwitch"
+                    buttons_langSwitch.className="desktop "
+                    buttons_langSwitch.onclick=""
+                    buttons_langSwitch.innerHTML = `
+                    <div class="item">
+                        <div class='front front-anim' id='langSwitch_front'>
+                            <img src="./indexdata/graphics/cy_sidebar/ui_menu_lang.png" />
+                        </div>
+                        <div class='back back-anim' id='langSwitch_back' style="height: 100%;">
+                            <img src="./indexdata/graphics/cy_sidebar/ui_menu_lang_eng.png" />
+                        </div>
+                    </div>
+                    `
+                    result.appendChild(buttons_langSwitch)
+                }
+            });
+        ]]>
+    </action>
+    <action name="CY_Sidebar_buttons" type="Javascript" devices="tablet">
+        <![CDATA[
+            $(document).ready(function(){
+                let result = document.querySelector('#CY_Sidebar_outputButtons');
+                if(result != null){
+                    let buttons_langSwitch = document.createElement('div')
+                    buttons_langSwitch.id="langSwitch"
+                    buttons_langSwitch.innerHTML = `
+                    <div class="tablet " onclick="" >
+                        <div class="item">
+                            <div class='front front-anim' id='langSwitch_front'>
+                                <img src="./indexdata/graphics/cy_sidebar/ui_menu_lang.png" />
+                            </div>
+                            <div class='back back-anim' id='langSwitch_back' style="height: 100%;">
+                                <img src="./indexdata/graphics/cy_sidebar/ui_menu_lang_eng.png" />
+                            </div>
+                        </div>
+                    </div>
+                    `
+                    result.appendChild(buttons_langSwitch)
+                }
+            });
+        ]]>
+    </action>
+    <action name="CY_Sidebar_buttons" type="Javascript" devices="mobile">
+        <![CDATA[
+            $(document).ready(function(){
+                let result = document.querySelector('#CY_Sidebar_outputButtons');
+                if(result != null){
+                    let buttons_langSwitch = document.createElement('div')
+                    buttons_langSwitch.id="langSwitch"
+                    buttons_langSwitch.innerHTML = `
+                    <div class="mobile " onclick="" >
+                        <div class="item">
+                            <div class='front front-anim' id='langSwitch_front'>
+                                <img src="./indexdata/graphics/cy_sidebar/ui_menu_lang.png" />
+                            </div>
+                            <div class='back back-anim' id='langSwitch_back' style="height: 100%;">
+                                <img src="./indexdata/graphics/cy_sidebar/ui_menu_lang_eng.png" />
+                            </div>
+                        </div>
+                    </div>
+                    `
+                    result.appendChild(buttons_langSwitch)
+                }
+            });
+        ]]>
+    </action>
+    <action name="CY_Sidebar_menu_1_action">
+          mainloadscene(pano10);lookat(-69.769800, 1.536780, 61.471200);
+
+
+    </action>
+    <action name="CY_Sidebar_menu_2_action">openWebsite_websiteViewer(CY_Sidebaritem_actionchooserID108503websiteViewer|websiteViewer|displaywebsitewebsite_url, CY_Sidebaritem_actionchooserID108503websiteViewer|websiteViewer|displaywebsitewebsite_title);
+
+
+    </action>
+    <action name="CY_Sidebar_menu_3_action">
+          mainloadscene(pano92);lookat(95.420700, 0.277685, 64.565000);
+
+
+    </action>
+    <action name="CY_Sidebar_menu_4_1_action">openWebsite_websiteViewer(CY_Sidebaritem_actionchooserID108653websiteViewer|websiteViewer|displaywebsitewebsite_url, CY_Sidebaritem_actionchooserID108653websiteViewer|websiteViewer|displaywebsitewebsite_title);
+
+
+    </action>
+    <action name="CY_Sidebar_menu_4_2_action">openWebsite_websiteViewer(CY_Sidebaritem_actionchooserID106227websiteViewer|websiteViewer|displaywebsitewebsite_url, CY_Sidebaritem_actionchooserID106227websiteViewer|websiteViewer|displaywebsitewebsite_title);
+
+
+    </action>
+    <action name="CY_Sidebar_menu_4_3_action">
+          mainloadscene(pano11);lookat(5.940000, 1.980000, 99.000000);
+
+
+    </action>
+    <action name="CY_Sidebar_menu_4_6_action">
+          mainloadscene(pano463);lookat(-26.709900, 1.364880, 99.000000);
+
+
+    </action>
+    <action name="CY_Sidebar_menu_5_action">openWebsite_websiteViewer(CY_Sidebaritem_actionchooserID106268websiteViewer|websiteViewer|displaywebsitewebsite_url, CY_Sidebaritem_actionchooserID106268websiteViewer|websiteViewer|displaywebsitewebsite_title);
+
+
+    </action>
+    <action name="CY_Sidebar_menu_6_action">openWebsite_websiteViewer(CY_Sidebaritem_actionchooserID10679websiteViewer|websiteViewer|displaywebsitewebsite_url, CY_Sidebaritem_actionchooserID10679websiteViewer|websiteViewer|displaywebsitewebsite_title);
+
+
+    </action>
+    <action name="CY_Sidebar_menu_7_action">openWebsite_websiteViewer(CY_Sidebaritem_actionchooserID106602websiteViewer|websiteViewer|displaywebsitewebsite_url, CY_Sidebaritem_actionchooserID106602websiteViewer|websiteViewer|displaywebsitewebsite_title);
+
+
+    </action>
+    <action name="CY_Sidebar_menu_8_action">CY_ActionData_callAction(item01);
+
+    </action>
+    <action name="CY_Sidebar_menu_9_action">getmessage(urltoopen,CY_Sidebaritem_actionchooserID106410openurlwebsiteurl);openurl(get(urltoopen),_blank);
+
+
+    </action>
+    <layer name="CY_Sidebar_layer_menuOpen"
+        keep="true"
+        parent="CY_Sidebar_layer"  
+        align="centerright" 
+        x="-55"
+        y="-50"
+        visible="false"
+        alpha="1"
+        url="%FIRSTXML%/graphics/cy_sidebar/ui_arrow_l.png"
+        width="100"
+        height="prop"
+        onloaded="if(device.desktop,set(layer[CY_Sidebar_layer_menuOpen].visible, true););
+            if(device.tablet, set(layer[CY_Sidebar_layer_menuOpen].visible, true););
+            if(device.mobile, set(layer[CY_Sidebar_layer_menuOpen].visible, true););"
+        onclick="CY_Sidebar_open();"
+        />
+    <layer name="CY_Sidebar_layer_menuClose"
+        keep="true"
+        parent="CY_Sidebar_layer" 
+        align="centerright"   
+        x="-55"
+        y="-50"
+        visible="false"
+        alpha="1"
+        url="%FIRSTXML%/graphics/cy_sidebar/ui_arrow_l.png"
+        width="100"
+        height="prop"
+        onclick="CY_Sidebar_close();"
+        />
+    <action name="CY_Sidebar_open">
+        tween(layer[CY_Sidebar_layer].x, 0, 0.5, easeinoutquad);
+        CY_Sidebar_close_UI();
+    </action>
+    <action name="CY_Sidebar_close">
+        if(device.mobile, def(CY_Sidebar_layerX, string, -30%););
+        if(device.tablet, def(CY_Sidebar_layerX, string, -150););
+        if(device.desktop, def(CY_Sidebar_layerX, string, -170););
+        tween(layer[CY_Sidebar_layer].x, get(CY_Sidebar_layerX), 0.5, easeinoutquad);
+        CY_Sidebar_open_UI();
+    </action>
+    <action name="CY_Sidebar_toggle_UI">
+        if(layer[CY_Sidebar_layer_menuOpen].visible == 'true',
+            CY_Sidebar_close_UI();
+            ,
+            CY_Sidebar_open_UI();
+        );
+    </action>
+    <action name="CY_Sidebar_open_UI">
+        set(layer[CY_Sidebar_layer_menuOpen].visible, true);
+        set(layer[CY_Sidebar_layer_menuOpen_hover].visible, false);
+        set(layer[CY_Sidebar_layer_menuOpen].enabled, true);
+        set(layer[CY_Sidebar_layer_menuOpen_hover].enabled, true);
+        set(layer[CY_Sidebar_layer_menuClose].visible, false);
+        set(layer[CY_Sidebar_layer_menuClose_hover].visible, false);
+        set(layer[CY_Sidebar_layer_menuClose].enabled, false);
+        set(layer[CY_Sidebar_layer_menuClose_hover].enabled, false);
+    </action>
+    <action name="CY_Sidebar_close_UI">
+        set(layer[CY_Sidebar_layer_menuOpen].visible, false);
+        set(layer[CY_Sidebar_layer_menuOpen_hover].visible, false);
+        set(layer[CY_Sidebar_layer_menuOpen].enabled, false);
+        set(layer[CY_Sidebar_layer_menuOpen_hover].enabled, false);
+        set(layer[CY_Sidebar_layer_menuClose].visible, true);
+        set(layer[CY_Sidebar_layer_menuClose_hover].visible, false);
+        set(layer[CY_Sidebar_layer_menuClose].enabled, true);
+        set(layer[CY_Sidebar_layer_menuClose_hover].enabled, true);
+    </action>
+    <action name="CY_Sidebar_unDisplay">
+        set(layer[CY_Sidebar_layer_menuOpen].visible, false);
+        set(layer[CY_Sidebar_layer_menuOpen_hover].visible, false);
+        set(layer[CY_Sidebar_layer_menuOpen].enabled, false);
+        set(layer[CY_Sidebar_layer_menuOpen_hover].enabled, false);
+        set(layer[CY_Sidebar_layer_menuOpen].width, 0);
+        set(layer[CY_Sidebar_layer_menuClose].visible, false);
+        set(layer[CY_Sidebar_layer_menuClose_hover].visible, false);
+        set(layer[CY_Sidebar_layer_menuClose].enabled, false);
+        set(layer[CY_Sidebar_layer_menuClose_hover].enabled, false);
+    </action>
+    <action name="CY_Sidebar_display">
+        set(layer[CY_Sidebar_layer_menuOpen].visible, true);
+        set(layer[CY_Sidebar_layer_menuOpen_hover].visible, false);
+        set(layer[CY_Sidebar_layer_menuOpen].enabled, true);
+        set(layer[CY_Sidebar_layer_menuOpen_hover].enabled, true);
+        set(layer[CY_Sidebar_layer_menuOpen].width, 100);
+        set(layer[CY_Sidebar_layer_menuClose].visible, false);
+        set(layer[CY_Sidebar_layer_menuClose_hover].visible, false);
+        set(layer[CY_Sidebar_layer_menuClose].enabled, false);
+        set(layer[CY_Sidebar_layer_menuClose_hover].enabled, false);
+    </action>
+    <action name="CY_Sidebar_toggleDisplay">
+        if(layer[CY_Sidebar_layer_menuOpen].width == 0,
+            CY_Sidebar_display();
+            ,
+            CY_Sidebar_unDisplay();
+        );
+    </action><action name="CY_Sidebar_toggle">
+        if(layer[CY_Sidebar_layer].x == 0,
+            CY_Sidebar_close();
+            ,
+            CY_Sidebar_open();
+        );
+    </action>
+
+<!-- ********** -->
+<!-- Hide interface on idle -->
+<!-- id : hideonidle -->
+<!-- ********** -->
+    <events onxmlcomplete="set(idletime,60.0);" 
+		    onidle="
+					 
+					startautotour(); 
+					     CY_Sidebar_close();
+
+   
+				 "/>
+
+
+<!-- ********** -->
+<!-- Sans Control Bar -->
+<!-- id : SansControlBar -->
+<!-- ********** -->
+
+  <krpano SansControlBarbarbuilt="false" SansControlBarbackgroundwidthwhenclosed="0" SansControlBarbackgroundwidthwhenopened="0" SansControlBarIsOpened="false" />
+  <events name="SansControlBarevents" 
+    onxmlcomplete="SansControlBarbuildMenuBar();" 
+
+
+    keep="true" />
+
+
+
+  <action name="SansControlBarbuildMenuBar">
+    ifnot (SansControlBarbarbuilt, SansControlBarbuildMenu(); set(SansControlBarbarbuilt, true););
+  </action>
+
+  <style name="SansControlBar_btn_style"
+         keep="true"
+         edge="right"
+         align="right"
+         x="0" y="0"
+         width="40" height="40"
+         crop="0|0|60|60"
+         onovercrop="0|60|60|60"
+         ondowncrop="0|120|60|60"
+         onhover="showTooltip('plugin', SansControlBarmenuTooltipStyle, bottom);"
+         onout="hideTooltip();"
+         />
+  <style name="SansControlBar_btn_style_off"
+         keep="true"
+         edge="right"
+         align="right"
+         x="0" y="0"
+         width="40" height="40"
+         onhover="showTooltip('plugin', SansControlBarmenuTooltipStyle, bottom);"
+         onout="hideTooltip();"
+         />
+
+  <layer name="SansControlBar_menu_bg"
+         keep="true"
+         type="container"
+         zorder="6"
+         width="40"
+         height="40"
+         align="bottom"
+         x="0" y="10"
+         maskchildren="true"
+         rotate="0"
+         visible="false"
+         >
+
+
+    <layer name="SansControlBarbtn_home"
+           url="%FIRSTXML%/graphics/sans controlbar/btn_home.png"
+           style="SansControlBar_btn_style"
+           onclick="SansControlBarbtn_home_action();"
+           visible="false"
+           tooltip="SansControlBarhomeTip"
+           />
+
+
+    <layer name="SansControlBarbtn_sound_on"
+            url="%FIRSTXML%/graphics/sans controlbar/btn_start_sound.png"
+            onclick="playTourSounds();
+"
+            style="SansControlBar_btn_style"
+            visible="false"
+            tooltip="SansControlBarsoundsOnTip"
+            />
+    <layer name="SansControlBarbtn_sound_off"
+            url="%FIRSTXML%/graphics/sans controlbar/btn_stop_sound.png"
+            onclick="stopTourSounds();
+"
+            style="SansControlBar_btn_style"
+            visible="false"
+            tooltip="SansControlBarsoundsOffTip"
+            />
+
+
+
+    <layer name="SansControlBarbtn_share"
+            url="%FIRSTXML%/graphics/sans controlbar/btn_share.png"
+            onclick="shareTour();
+"
+            style="SansControlBar_btn_style"
+            visible="false"
+            tooltip="SansControlBarshareTip"
+            />
+
+
+    <layer name="SansControlBarbtn_openfs"
+            url="%FIRSTXML%/graphics/sans controlbar/btn_enter_fs.png"
+            onclick="enterFullscreen();
+"
+            style="SansControlBar_btn_style"
+            visible="false"
+            devices="fullscreensupport"
+            tooltip="SansControlBaropenFsTip"
+            />
+    <layer name="SansControlBarbtn_closefs"
+            url="%FIRSTXML%/graphics/sans controlbar/btn_close_fs.png"
+            onclick="exitFullscreen();
+"
+            style="SansControlBar_btn_style"
+            visible="false"
+            devices="fullscreensupport"
+            tooltip="SansControlBarcloseFsTip"
+            />
+
+    <layer name="SansControlBarbtn_autorotate_on"
+            url="%FIRSTXML%/graphics/sans controlbar/btn_start_autorotation.png"
+            onclick="resumeautorotation();
+"
+            style="SansControlBar_btn_style"
+            visible="false"
+            tooltip="SansControlBarautorotateOnTip"
+            />
+    <layer name="SansControlBarbtn_autorotate_off"
+            url="%FIRSTXML%/graphics/sans controlbar/btn_stop_autorotation.png"
+            onclick="pauseautorotation();
+"
+            style="SansControlBar_btn_style"
+            visible="false"
+            tooltip="SansControlBarautorotateOffTip"
+            />
+
+
+
+
+
+    <layer name="SansControlBarbtn_hidecontrols"
+           url="%FIRSTXML%/graphics/sans controlbar/btn_hide_controls.png"
+           style="SansControlBar_btn_style"
+           onclick="hideTourControls();
+"
+           visible="false"
+           tooltip="SansControlBarhideControlsTip"
+           />
+    <layer name="SansControlBarbtn_showcontrols"
+           url="%FIRSTXML%/graphics/sans controlbar/btn_show_controls.png"
+           style="SansControlBar_btn_style"
+           onclick="showTourControls();
+"
+           tooltip="SansControlBardisplayControlsTip"
+           visible="false"
+           />
+ </layer>
+
+    <action name="SansControlBarbtn_home_action">
+      mainloadscene(pano10);
+    </action>
+
+
+
+
+	<events name="SansControlBarhideshowcontrolsevent" 
+		hidetourcontrols="SansControlBarhideMenuControls();" 
+		showtourcontrols="SansControlBarshowMenuControls();" 
+		keep="true" />
+
+  <action name="SansControlBarhideMenuControls">
+    set(SansControlBarIsOpened, false);
+    set(layer[SansControlBarbtn_hidecontrols].visible, false);
+    set(layer[SansControlBarbtn_showcontrols].visible, true);
+
+set(layer[SansControlBarbtn_share].visible, false);
+
+set(layer[SansControlBarbtn_home].visible, false);
+	SansControlBarupdateFullscreenButtons();
+
+
+	SansControlBarupdateAutorotationButtons();
+
+	SansControlBarupdateSoundButtons();
+
+
+
+
+
+	set(layer[SansControlBar_menu_bg].width, get(SansControlBarbackgroundwidthwhenclosed));
+
+	set(layer[SansControlBar_menu_bg].visible, true);
+  </action>
+  <action name="SansControlBarshowMenuControls">
+    set(SansControlBarIsOpened, true);
+    set(layer[SansControlBarbtn_hidecontrols].visible, true);
+    set(layer[SansControlBarbtn_showcontrols].visible, false);
+	set(layer[SansControlBar_menu_bg].visible, true);
+
+set(layer[SansControlBarbtn_share].visible, true);
+
+set(layer[SansControlBarbtn_home].visible, true);
+	SansControlBarupdateFullscreenButtons();
+
+
+	SansControlBarupdateAutorotationButtons();
+
+	SansControlBarupdateSoundButtons();
+
+
+
+
+    set(layer[SansControlBar_menu_bg].width, get(SansControlBarbackgroundwidthwhenopened));
+  </action>
+
+
+
+
+  <events name="SansControlBarmenufullscreenchangeevent"
+          onenterfullscreen="SansControlBarupdateFullscreenButtons();"
+          onexitfullscreen="SansControlBarupdateFullscreenButtons();"
+          keep="true"/>
+	<action name="SansControlBarHideFullscreenButtons">
+		set(layer[SansControlBarbtn_openfs].visible , false);
+		set(layer[SansControlBarbtn_closefs].visible, false);
+	</action>
+	<action name="SansControlBarShowFullscreenButtons">
+		if (device.fullscreensupport,
+			if(tour_fullscreen,
+				set(layer[SansControlBarbtn_openfs].visible , false);
+				set(layer[SansControlBarbtn_closefs].visible, true);
+			,
+				set(layer[SansControlBarbtn_openfs].visible ,true);
+				set(layer[SansControlBarbtn_closefs].visible,false);
+			);
+		,
+			SansControlBarHideFullscreenButtons();
+		);
+	</action>
+	<action name="SansControlBarupdateFullscreenButtons">
+		if (tour_displaycontrols,
+			SansControlBarShowFullscreenButtons();
+		,
+			SansControlBarHideFullscreenButtons();
+		);
+	</action>
+
+	<events name="SansControlBarAutorotationEvents"
+		onstartautorotation="SansControlBarupdateAutorotationButtons();"
+		onresumeautorotation="SansControlBarupdateAutorotationButtons();"
+		onstopautorotation="SansControlBarupdateAutorotationButtons();"
+		onpauseautorotation="SansControlBarupdateAutorotationButtons();"
+		keep="true"/>
+	<action name="SansControlBarHideAutorotationButtons">
+		set(layer[SansControlBarbtn_autorotate_off].visible, false);
+		set(layer[SansControlBarbtn_autorotate_on].visible , false);
+	</action>
+	<action name="SansControlBarShowAutorotationButtons">
+		if(autorotate.enabled == false,
+			set(layer[SansControlBarbtn_autorotate_off].visible, false);
+			set(layer[SansControlBarbtn_autorotate_on].visible , true);
+		,
+			set(layer[SansControlBarbtn_autorotate_off].visible, true);
+			set(layer[SansControlBarbtn_autorotate_on].visible , false);
+		);
+	</action>
+	<action name="SansControlBarupdateAutorotationButtons">
+		if (tour_displaycontrols,
+			SansControlBarShowAutorotationButtons();
+		,
+			SansControlBarHideAutorotationButtons();
+		);
+	</action>
+
+
+  <events name="SansControlBarplaystopsoundsevent" playtoursoundsevent="SansControlBarupdateSoundButtons();" stoptoursoundsevent="SansControlBarupdateSoundButtons();" keep="true"/>
+	<action name="SansControlBarHideSoundButtons">
+		set(layer[SansControlBarbtn_sound_off].visible, false);
+		set(layer[SansControlBarbtn_sound_on].visible , false);
+	</action>
+	<action name="SansControlBarShowSoundButtons">
+		if (tour_soundson == false,
+			set(layer[SansControlBarbtn_sound_off].visible, false);
+			set(layer[SansControlBarbtn_sound_on].visible , true);
+		,
+			set(layer[SansControlBarbtn_sound_off].visible, true);
+			set(layer[SansControlBarbtn_sound_on].visible , false);
+		);
+	</action>
+	<action name="SansControlBarupdateSoundButtons">
+		if (tour_displaycontrols,
+			SansControlBarShowSoundButtons();
+		,
+			SansControlBarHideSoundButtons();
+		);
+	</action>
+
+
+<layer name="SansControlBarmenuTooltipStyle"
+	keep="true"
+	enabled="false"
+	capture="false"
+	url="%FIRSTXML%/graphics/textfield.swf"
+	align="center"
+	background="true"
+	backgroundcolor="0x000000"
+	backgroundalpha="0.40000000000000002"
+	border="false"
+	shadow="1" shadowrange="4.0" shadowangle="45" shadowcolor="0x000000" shadowalpha="1"
+	textshadow="1" textshadowrange="4.0" textshadowangle="45" textshadowcolor="0x000000" textshadowalpha="1"
+	css="color:#ffffff;font-family:Calibri;font-weight:bold;font-size:14px;text-align:left;"
+	height="20"
+	autoheight="true"
+	autowidth="auto"
+	xoffset="0"
+	yoffset="0"
+	padding="2"
+	selectable="false"
+	zorder="0"
+	visible="false"
+	html=""
+	edge="bottom"
+/>
+  <action name="SansControlBarbuildMenu">
+    
+    set(SansControlBarbutton_pos, 0);
+
+	set(SansControlBarbackgroundwidthwhenclosed, 40);
+    set(layer[SansControlBarbtn_hidecontrols].x, get(SansControlBarbutton_pos));
+    set(layer[SansControlBarbtn_showcontrols].x, get(SansControlBarbutton_pos));
+    inc(SansControlBarbutton_pos, 45);
+
+
+
+      if (device.fullscreensupport,
+        set(layer[SansControlBarbtn_openfs].x , get(SansControlBarbutton_pos));
+        set(layer[SansControlBarbtn_closefs].x, get(SansControlBarbutton_pos));
+        inc(SansControlBarbutton_pos, 45);
+      );
+
+
+      set(layer[SansControlBarbtn_share].x, get(SansControlBarbutton_pos));
+      inc(SansControlBarbutton_pos, 45);
+
+
+      set(layer[SansControlBarbtn_autorotate_on].x , get(SansControlBarbutton_pos));
+      set(layer[SansControlBarbtn_autorotate_off].x, get(SansControlBarbutton_pos));
+      inc(SansControlBarbutton_pos, 45);
+
+
+      set(layer[SansControlBarbtn_sound_on].x , get(SansControlBarbutton_pos));
+      set(layer[SansControlBarbtn_sound_off].x, get(SansControlBarbutton_pos));
+      inc(SansControlBarbutton_pos, 45);
+
+
+
+
+
+
+        set(layer[SansControlBarbtn_home].x, get(SansControlBarbutton_pos));
+        inc(SansControlBarbutton_pos, 45);
+
+
+
+      dec(SansControlBarbutton_pos, 5);
+
+      set(SansControlBarbackgroundwidthwhenopened, get(SansControlBarbutton_pos));
+
+
+    
+      set(layer[SansControlBar_menu_bg].width, get(SansControlBarbackgroundwidthwhenopened));
+	
+	
+	
+    </action>
+
+	<events name="SansControlBarStartTourEvents" onTourStart="SansControlBarCallOnStartTour();" keep="true" />
+	
+	<action name="SansControlBarCallOnStartTour">
+		
+		showTourControls();
+
+	</action>
+
+
+
+<!-- ********** -->
+<!-- Social Share -->
+<!-- id : socialShare -->
+<!-- ********** -->
+
+
+
+<ptplugin name="socialShare" engine="kolorBox">
+	<settings>
+		<option name="position" value="bottom" type="string" />
+		<option name="margin_x" value="0" type="int" />
+		<option name="margin_y" value="50" type="int" />
+		<option name="external_padding" value="0" type="int" />
+		<option name="animate" value="false" type="bool" />
+		<option name="draggable_box" value="false" type="bool" />
+		<option name="container_auto_size" value="true" type="bool" />
+		<option name="container_color" value="000000" type="string" />
+		<option name="container_alpha" value="0.40000000000000002" type="float" />
+		<option name="container_topleft_border_radius" value="15" type="int" />
+		<option name="container_topright_border_radius" value="15" type="int" />
+		<option name="container_bottomleft_border_radius" value="15" type="int" />
+		<option name="container_bottomright_border_radius" value="15" type="int" />
+		<option name="container_border_width" value="0" type="int" />
+		<option name="container_border_color" value="ffffff" type="string" />
+		<option name="container_border_alpha" value="0" type="float" />
+		<option name="overlay_displayed" value="true" type="bool" />
+		<option name="overlay_color" value="000000" type="string" />
+		<option name="overlay_alpha" value="0.50000762951094835" type="float" />
+
+		<option name="social_btn" value="facebook#twitter#google#reddit#lineit" type="string" />
+		<option name="social_btn_icons" value="iconset0" type="string" />
+
+		<option name="social_orientation" value="horizontal" type="string" />
+		<option name="social_btn_size" value="30" type="int" />
+		<option name="inner_margin" value="10" type="int" />
+		
+		
+		<option name="title_displayed" value="false" type="bool" />
+		<option name="caption_displayed" value="false" type="bool" />
+		<option name="close_displayed" value="false" type="bool" />
+		<option name="close_position" value="topright" type="string" />
+		<option name="close_text" value="socialShareclose_text" type="string" />
+
+		<option name="close_callback" value="invokeKrFunction('closeKolorBoxCallback_socialShare')" type="string" />
+		<option name="zorder" value="7" type="int" />
+		<option name="use_i18n" value="true" type="bool" />
+	</settings>
+	<internaldata>
+
+	</internaldata>
+</ptplugin>
+
+<action name="kolorBoxJsReady_socialShare">
+	set(ptplugin[socialShare].jsready, true);
+
+</action>
+
+
+
+<action name="showSocialShare_socialShare">
+	ifnot(ptplugin[socialShare].isOpen,
+		if(ptplugin[socialShare].doNotDeleteMe,
+			set(ptplugin[socialShare].currentCall, false);
+			set(ptplugin[socialShare].doNotDeleteMe, false);
+		set(ptplugin[socialShare].isOpen, true);
+		pauseautorotation(forceplugin);
+
+			js(invokePluginFunction(socialShare, loadSingleArrayItem, social));
+		,
+			set(ptplugin[socialShare].currentCall, true);
+			set(ptplugin[socialShare].doNotDeleteMe, true);
+			events.dispatch(onremovedisplayedobject);
+			delayedcall(0.3,showSocialShare_socialShare(););
+		);
+	);
+</action>
+
+<action name="toggleSocialShare_socialShare">
+	js(invokePluginFunction(socialShare, toggleKolorBox, %1));
+</action>
+
+
+<action name="closeKolorBox_socialShare">
+	if(ptplugin[socialShare].doNotDeleteMe,
+		set(ptplugin[socialShare].doNotDeleteMe, false);
+	,
+	js(invokePluginFunction(socialShare, closeKolorBox));
+	);
+</action>
+
+<action name="closeKolorBoxCallback_socialShare">
+	resumeautorotation(forceplugin);
+
+	
+	set(ptplugin[socialShare].doNotDeleteMe, false);
+	set(ptplugin[socialShare].isOpen, false);
+</action>
+
+<action name="changeLanguage_socialShare">
+	if(ptplugin[socialShare].jsready,
+		js(invokePluginFunction(socialShare, changeLanguage));
+	);
+</action>
+
+<events name="kolorBoxEvents_socialShare" 
+	keep="true"
+	onremovepano="if(ptplugin[socialShare].isOpen,closeKolorBox_socialShare(););"
+	onremovedisplayedobject="ifnot(ptplugin[socialShare].currentCall,if(ptplugin[socialShare].isOpen,closeKolorBox_socialShare();););"
+	onsharetour="showSocialShare_socialShare();" 
+	
+	
+	changetourlanguage="changeLanguage_socialShare();"
+	/>
+ 
+    <!-- ********** -->
+    <!-- ActionData -->
+    <!-- id : CY_ActionData -->
+    <!-- ********** --> 
+    <action name="CY_ActionData_item01_action">
+          mainloadscene(pano31);lookat(get(panoview.h), get(panoview.v), get(panoview.fov));
+openWebsite_websiteViewer(CY_ActionDataitem01_action_click10110266websiteViewer|websiteViewer|displaywebsitewebsite_url, CY_ActionDataitem01_action_click10110266websiteViewer|websiteViewer|displaywebsitewebsite_title);
+
+</action>
+    <action name="CY_ActionData_callAction">
+        txtadd(cmd, 'CY_ActionData_', %1, '_action();');
+        call(cmd);
+    </action>
+<!-- ********** -->
+<!-- Website Box_room_info -->
+<!-- id : websiteViewer1 -->
+<!-- ********** -->
+
+<ptplugin name="websiteViewer1" engine="kolorBox">
+	<settings>
+		<option name="position" value="right" type="string" />
+		<option name="margin_x" value="10" type="int" />
+		<option name="margin_y" value="0" type="int" />
+		<option name="external_padding" value="10" type="int" />
+		<option name="draggable_box" value="false" type="bool" />
+		<option name="container_auto_size" value="false" type="bool" />
+		<option name="container_width" value="200" type="int" />
+		<option name="container_width_unit" value="pixel" type="string" />
+		<option name="container_height" value="400" type="int" />
+		<option name="container_height_unit" value="pixel" type="string" />
+		<option name="container_color" value="222222" type="string" />
+		<option name="container_alpha" value="0.80000000000000004" type="float" />
+		<option name="container_topleft_border_radius" value="15" type="int" />
+		<option name="container_topright_border_radius" value="15" type="int" />
+		<option name="container_bottomleft_border_radius" value="15" type="int" />
+		<option name="container_bottomright_border_radius" value="15" type="int" />
+		<option name="container_border_width" value="0" type="int" />
+		<option name="container_border_color" value="ffffff" type="string" />
+		<option name="container_border_alpha" value="1" type="float" />
+		<option name="overlay_displayed" value="false" type="bool" />
+		<option name="overlay_color" value="000000" type="string" />
+		<option name="overlay_alpha" value="0.30000762951094834" type="float" />
+
+		<option name="title_displayed" value="false" type="bool" />
+		<option name="title_position" value="top" type="string" />
+		<option name="title_font" value="Verdana" type="string" />
+		<option name="title_size" value="14" type="int" />
+		<option name="title_weight" value="normal" type="string" />
+		<option name="title_style" value="normal" type="string" />
+		<option name="title_decoration" value="none" type="string" />
+		<option name="title_color" value="000000" type="string" />
+		<option name="caption_displayed" value="false" type="bool" />
+		<option name="iframe_scrolling" value="auto" type="string" />
+		<option name="iframe_default_width" value="1100" type="int" />
+		<option name="iframe_default_height" value="800" type="int" />
+		<option name="iframe_devices_width" value="1100" type="int" />
+		<option name="iframe_devices_height" value="800" type="int" />
+		<option name="force_ios_scrolling" value="true" type="bool" />
+		<option name="fullscreen_displayed" value="false" type="bool" />
+		<option name="fullscreen_position" value="topleft" type="string" />
+		<option name="fullscreen_text" value="websiteViewer1fullscreen_text" type="string" />
+
+
+
+
+		<option name="close_displayed" value="false" type="bool" />
+		<option name="close_position" value="topright" type="string" />
+		<option name="close_text" value="websiteViewer1close_text" type="string" />
+
+		<option name="close_callback" value="invokeKrFunction('closeKolorBoxCallback_websiteViewer1')" type="string" />
+		<option name="zorder" value="9" type="int" />
+		<option name="use_i18n" value="true" type="bool" />
+	</settings>
+	<internaldata>
+		
+	</internaldata>
+</ptplugin>
+
+<action name="kolorBoxJsReady_websiteViewer1">
+	set(ptplugin[websiteViewer1].jsready, true);
+</action>
+
+<action name="openWebsite_websiteViewer1">
+	ifnot(ptplugin[websiteViewer1].isOpen,
+		set(ptplugin[websiteViewer1].isOpen, true);
+		set(ptplugin[websiteViewer1].doNotDeleteMe, false);
+		getmessage(websiteViewer1_boxurl, %1);
+		txtadd(websiteViewer1_boxurl, ?iframe=true);
+		pauseautorotation(forceplugin);
+
+		js(invokePluginFunction(websiteViewer1, loadSingleArrayItem, get(websiteViewer1_boxurl), %2));
+		events.dispatch(onremovedisplayedobject);
+	,
+		if('%1' != websiteViewer1_boxurl,
+			closeKolorBox_websiteViewer1();
+			delayedcall(0.3,openWebsite_websiteViewer1(%1,%2););
+		);
+	);
+</action>
+
+<action name="toggleWebsite_websiteViewer1">
+	js(invokePluginFunction(websiteViewer1, toggleKolorBox, %1));
+</action>
+
+
+<action name="closeKolorBox_websiteViewer1">
+	js(invokePluginFunction(websiteViewer1, closeKolorBox));
+</action>
+
+<action name="closeKolorBoxCallback_websiteViewer1">
+	resumeautorotation(forceplugin);
+
+	set(ptplugin[websiteViewer1].isOpen, false);
+</action>
+
+<action name="changeLanguage_websiteViewer1">
+	if(ptplugin[websiteViewer1].jsready,
+		stopdelayedcall(delay_websiteViewer1);
+		js(invokePluginFunction(websiteViewer1, changeLanguage));
+	,
+		delayedcall(delay_websiteViewer1, 0.1, changeLanguage_websiteViewer1(););
+	);
+</action>
+
+<events name="kolorBoxEvents_websiteViewer1" 
+	keep="true"
+	onremovepano="if(ptplugin[websiteViewer1].isOpen,closeKolorBox_websiteViewer1(););"
+	changetourlanguage="changeLanguage_websiteViewer1();"
+	/>
+
+<!-- ********** -->
+<!-- BTN_room_1 -->
+<!-- id : buttonForASinglePano1 -->
+<!-- ********** -->
+
+  <layer name="buttonForASinglePano1"
+         keep="true"
+         url="%FIRSTXML%/graphics/buttonforasinglepano1/ui_title_room_1.png"
+         align="topright"
+         x="0"
+         y="150"
+         zorder="10"
+         visible="false"
+         handcursor="false"
+         enabled="false"
+         onout=""
+         onover=""
+         width="230"
+         height="prop"
+         />
+
+
+
+
+  <events name="buttonForASinglePano1events"
+    onTourStart="showbuttonForASinglePano1();"
+    hidetourcontrols="hidebuttonForASinglePano1();"
+    showtourcontrols="showbuttonForASinglePano1();"
+
+    onPanoStart="showbuttonForASinglePano1();"
+
+    keep="true" />
+  <action name="hidebuttonForASinglePano1">set(layer[buttonForASinglePano1].visible, false);</action>
+  <action name="showbuttonForASinglePano1">
+    set(display_buttonForASinglePano1, false);
+    if(tour_displaycontrols,
+
+
+    if (xml.scene == pano11, set(display_buttonForASinglePano1, true); );
+
+
+    );
+    if (display_buttonForASinglePano1,
+      set(layer[buttonForASinglePano1].visible, true);
+    ,
+      hidebuttonForASinglePano1();
+    );
+  </action>
+
+
+
+<!-- ********** -->
+<!-- BTN_room_book -->
+<!-- id : buttonForASinglePano2 -->
+<!-- ********** -->
+
+  <layer name="buttonForASinglePano2"
+         keep="true"
+         url="%FIRSTXML%/graphics/buttonforasinglepano2/ui_btn_room_book.png"
+         align="topright"
+         x="0"
+         y="200"
+         zorder="11"
+         visible="false"
+         onclick="buttonForASinglePano2OnClick"
+         onout=""
+         onover="set(layer[buttonForASinglePano2over].visible, true);set(layer[buttonForASinglePano2].visible, false);"
+         width="230"
+         height="prop"
+         />
+
+
+<layer name="buttonForASinglePano2over"
+         keep="true"
+         url="%FIRSTXML%/graphics/buttonforasinglepano2/ui_btn_room_book_hover.png"
+         align="topright"
+         x="0"
+         y="200"
+         zorder="11"
+         visible="false"
+         onclick="buttonForASinglePano2OnClick"
+         onout="set(layer[buttonForASinglePano2].visible, true);set(layer[buttonForASinglePano2over].visible, false);"
+         onover=""
+         width="230"
+         height="prop"
+         />
+
+
+  <action name="buttonForASinglePano2OnClick">getmessage(urltoopen,buttonForASinglePano2onclick103977openurlwebsiteurl);openurl(get(urltoopen),_blank);
+
+
+  </action>
+
+  <events name="buttonForASinglePano2events"
+    onTourStart="showbuttonForASinglePano2();"
+    hidetourcontrols="hidebuttonForASinglePano2();"
+    showtourcontrols="showbuttonForASinglePano2();"
+
+    onPanoStart="showbuttonForASinglePano2();"
+
+    keep="true" />
+  <action name="hidebuttonForASinglePano2">set(layer[buttonForASinglePano2].visible, false);</action>
+  <action name="showbuttonForASinglePano2">
+    set(display_buttonForASinglePano2, false);
+    if(tour_displaycontrols,
+
+
+    if (xml.scene == pano11, set(display_buttonForASinglePano2, true); );
+
+
+    set(layer[buttonForASinglePano2over].visible, false);
+
+    );
+    if (display_buttonForASinglePano2,
+      set(layer[buttonForASinglePano2].visible, true);
+    ,
+      hidebuttonForASinglePano2();
+    );
+  </action>
+
+
+
+<!-- ********** -->
+<!-- BTN_room_info -->
+<!-- id : buttonForASinglePano3 -->
+<!-- ********** -->
+
+  <layer name="buttonForASinglePano3"
+         keep="true"
+         url="%FIRSTXML%/graphics/buttonforasinglepano3/ui_btn_room_info.png"
+         align="topright"
+         x="0"
+         y="250"
+         zorder="12"
+         visible="false"
+         onclick="buttonForASinglePano3OnClick"
+         onout=""
+         onover="set(layer[buttonForASinglePano3over].visible, true);set(layer[buttonForASinglePano3].visible, false);"
+         width="230"
+         height="prop"
+         />
+
+
+<layer name="buttonForASinglePano3over"
+         keep="true"
+         url="%FIRSTXML%/graphics/buttonforasinglepano3/ui_btn_room_info_hover.png"
+         align="topright"
+         x="0"
+         y="250"
+         zorder="12"
+         visible="false"
+         onclick="buttonForASinglePano3OnClick"
+         onout="set(layer[buttonForASinglePano3].visible, true);set(layer[buttonForASinglePano3over].visible, false);"
+         onover=""
+         width="230"
+         height="prop"
+         />
+
+
+  <action name="buttonForASinglePano3OnClick">if(ptplugin[websiteViewer1].isOpen,closeKolorBox_websiteViewer1();,openWebsite_websiteViewer1(buttonForASinglePano3onclick104774websiteViewer1|websiteViewer|toggle_websitewebsite_url, buttonForASinglePano3onclick104774websiteViewer1|websiteViewer|toggle_websitewebsite_title););
+
+
+  </action>
+
+  <events name="buttonForASinglePano3events"
+    onTourStart="showbuttonForASinglePano3();"
+    hidetourcontrols="hidebuttonForASinglePano3();"
+    showtourcontrols="showbuttonForASinglePano3();"
+
+    onPanoStart="showbuttonForASinglePano3();"
+
+    keep="true" />
+  <action name="hidebuttonForASinglePano3">set(layer[buttonForASinglePano3].visible, false);</action>
+  <action name="showbuttonForASinglePano3">
+    set(display_buttonForASinglePano3, false);
+    if(tour_displaycontrols,
+
+
+    if (xml.scene == pano11, set(display_buttonForASinglePano3, true); );
+
+
+    set(layer[buttonForASinglePano3over].visible, false);
+
+    );
+    if (display_buttonForASinglePano3,
+      set(layer[buttonForASinglePano3].visible, true);
+    ,
+      hidebuttonForASinglePano3();
+    );
+  </action>
+
+
+
+<!-- ********** -->
+<!-- welcom -->
+<!-- id : buttonForASinglePano4 -->
+<!-- ********** -->
+
+  <layer name="buttonForASinglePano4"
+         keep="true"
+         url="%FIRSTXML%/graphics/buttonforasinglepano4/ui_dia_welcome.png"
+         align="bottomright"
+         x="50"
+         y="-30"
+         zorder="13"
+         visible="false"
+         onclick="buttonForASinglePano4OnClick"
+         width="400"
+         height="prop"
+         />
+
+
+
+  <action name="buttonForASinglePano4OnClick">hidebuttonForASinglePano4();
+
+
+  </action>
+
+  <events name="buttonForASinglePano4events"
+    onTourStart="showbuttonForASinglePano4();"
+    hidetourcontrols="hidebuttonForASinglePano4();"
+    showtourcontrols="showbuttonForASinglePano4();"
+
+    onPanoStart="showbuttonForASinglePano4();"
+
+    keep="true" />
+  <action name="hidebuttonForASinglePano4">set(layer[buttonForASinglePano4].visible, false);</action>
+  <action name="showbuttonForASinglePano4">
+    set(display_buttonForASinglePano4, false);
+    if(tour_displaycontrols,
+
+
+    if (xml.scene == pano10, set(display_buttonForASinglePano4, true); );
+
+
+    );
+    if (display_buttonForASinglePano4,
+      set(layer[buttonForASinglePano4].visible, true);
+    ,
+      hidebuttonForASinglePano4();
+    );
+  </action>
+
+
+
+<!-- ********** -->
+<!-- Gallery -->
+<!-- id : gallery2 -->
+<!-- ********** -->
+
+<ptplugin name="gallery2" engine="kolorBox">
+	<settings>
+		<option name="position" value="center" type="string" />
+		<option name="margin_x" value="0" type="int" />
+		<option name="margin_y" value="0" type="int" />
+		<option name="external_padding" value="15" type="int" />
+		<option name="draggable_box" value="false" type="bool" />
+		<option name="slideshow_autoplay" value="false" type="bool" />
+		<option name="slideshow" value="5000" type="int" />
+		<option name="container_auto_size" value="true" type="bool" />
+		<option name="container_width" value="100" type="int" />
+		<option name="container_width_unit" value="percent" type="string" />
+		<option name="container_height" value="100" type="int" />
+		<option name="container_height_unit" value="percent" type="string" />
+		<option name="container_color" value="000000" type="string" />
+		<option name="container_alpha" value="0.59999999999999998" type="float" />
+		<option name="container_topleft_border_radius" value="15" type="int" />
+		<option name="container_topright_border_radius" value="15" type="int" />
+		<option name="container_bottomleft_border_radius" value="15" type="int" />
+		<option name="container_bottomright_border_radius" value="15" type="int" />
+		<option name="container_border_width" value="0" type="int" />
+		<option name="container_border_color" value="ffffff" type="string" />
+		<option name="container_border_alpha" value="1" type="float" />
+		<option name="overlay_displayed" value="true" type="bool" />
+		<option name="overlay_color" value="000000" type="string" />
+		<option name="overlay_alpha" value="0.50000762951094835" type="float" />
+
+		<option name="item_border_width" value="0" type="int" />
+		<option name="item_border_color" value="ffffff" type="string" />
+		<option name="item_border_alpha" value="1" type="float" />
+		
+		<option name="title_displayed" value="true" type="bool" />
+		<option name="title_position" value="top" type="string" />
+		<option name="title_font" value="Verdana" type="string" />
+		<option name="title_size" value="14" type="int" />
+		<option name="title_weight" value="bold" type="string" />
+		<option name="title_style" value="normal" type="string" />
+		<option name="title_decoration" value="none" type="string" />
+		<option name="title_color" value="ffffff" type="string" />
+		
+		<option name="caption_displayed" value="true" type="bool" />
+		<option name="caption_position" value="footer" type="string" />
+		<option name="caption_font" value="Verdana" type="string" />
+		<option name="caption_size" value="14" type="int" />
+		<option name="caption_weight" value="normal" type="string" />
+		<option name="caption_style" value="normal" type="string" />
+		<option name="caption_decoration" value="none" type="string" />
+		<option name="caption_color" value="ffffff" type="string" />
+		<option name="caption_width" value="100" type="int" />
+		<option name="caption_height" value="75" type="int" />
+		<option name="caption_textalign" value="center" type="string" />
+		
+		<option name="play_displayed" value="false" type="bool" />
+		<option name="play_position" value="bottomleft" type="string" />
+		<option name="play_text" value="gallery2play_text" type="string" />
+
+
+
+
+		<option name="navigation_displayed" value="false" type="bool" />
+		<option name="navigation_position" value="bottom" type="string" />
+		<option name="counter_color" value="666666" type="string" />
+		<option name="navprev_text" value="gallery2navprev_text" type="string" />
+		<option name="navnext_text" value="gallery2navnext_text" type="string" />
+
+
+
+
+		<option name="navigation_arrows" value="false" type="bool" />
+
+
+
+
+		<option name="fullscreen_displayed" value="false" type="bool" />
+		<option name="fullscreen_position" value="topleft" type="string" />
+		<option name="fullscreen_text" value="gallery2fullscreen_text" type="string" />
+
+
+
+
+		<option name="close_displayed" value="true" type="bool" />
+		<option name="close_position" value="topright" type="string" />
+		<option name="close_text" value="gallery2close_text" type="string" />
+
+		<option name="close_callback" value="invokeKrFunction('closeKolorBoxCallback_gallery2')" type="string" />
+		<option name="zorder" value="14" type="int" />
+		<option name="use_i18n" value="true" type="bool" />
+	</settings>
+	<internaldata>
+		<item name="item_1" title="gallery2picture_title0" caption="gallery2picture_caption0" value="indexdata/graphics/gallery2/onon.png"/>
+	</internaldata>
+</ptplugin>
+
+<action name="kolorBoxJsReady_gallery2">
+	set(ptplugin[gallery2].jsready, true);
+</action>
+
+<action name="showGallery_gallery2">
+	ifnot(ptplugin[gallery2].isOpen,
+		set(ptplugin[gallery2].isOpen, true);
+		set(ptplugin[gallery2].doNotDeleteMe, false);
+		set(gallery2_boxurl, %1);
+		pauseautorotation(forceplugin);
+
+		js(invokePluginFunction(gallery2, openKolorBox, %1));
+		events.dispatch(onremovedisplayedobject);
+	,
+		if(%1 !== null AND %1 != gallery2_boxurl,
+			closeKolorBox_gallery2();
+			delayedcall(0.3,showGallery_gallery2(%1););
+		);
+	);
+</action>
+
+<action name="toggleGallery_gallery2">
+	js(invokePluginFunction(gallery2, toggleKolorBox, %1));
+</action>
+
+
+<action name="closeKolorBox_gallery2">
+	js(invokePluginFunction(gallery2, closeKolorBox));
+</action>
+
+<action name="closeKolorBoxCallback_gallery2">
+	resumeautorotation(forceplugin);
+
+	set(ptplugin[gallery2].isOpen, false);
+</action>
+
+<action name="changeLanguage_gallery2">
+	if(ptplugin[gallery2].jsready,
+		js(invokePluginFunction(gallery2, changeLanguage));
+	,
+		delayedcall(delay_gallery2, 0.1, changeLanguage_gallery2(););
+	);
+</action>
+
+<events name="kolorBoxEvents_gallery2" 
+	keep="true"
+	onremovepano="if(ptplugin[gallery2].isOpen,closeKolorBox_gallery2(););"
+	changetourlanguage="changeLanguage_gallery2();"
+	/>
+
+<!-- ********** -->
+<!-- BTN_room_4 -->
+<!-- id : buttonForASinglePano5 -->
+<!-- ********** -->
+
+  <layer name="buttonForASinglePano5"
+         keep="true"
+         url="%FIRSTXML%/graphics/buttonforasinglepano5/ui_title_room_4.png"
+         align="topright"
+         x="0"
+         y="150"
+         zorder="15"
+         visible="false"
+         handcursor="false"
+         enabled="false"
+         onout=""
+         onover=""
+         width="230"
+         height="prop"
+         />
+
+
+
+
+  <events name="buttonForASinglePano5events"
+    onTourStart="showbuttonForASinglePano5();"
+    hidetourcontrols="hidebuttonForASinglePano5();"
+    showtourcontrols="showbuttonForASinglePano5();"
+
+    onPanoStart="showbuttonForASinglePano5();"
+
+    keep="true" />
+  <action name="hidebuttonForASinglePano5">set(layer[buttonForASinglePano5].visible, false);</action>
+  <action name="showbuttonForASinglePano5">
+    set(display_buttonForASinglePano5, false);
+    if(tour_displaycontrols,
+
+
+    if (xml.scene == pano462, set(display_buttonForASinglePano5, true); );
+
+    if (xml.scene == pano463, set(display_buttonForASinglePano5, true); );
+
+    if (xml.scene == pano465, set(display_buttonForASinglePano5, true); );
+
+
+    );
+    if (display_buttonForASinglePano5,
+      set(layer[buttonForASinglePano5].visible, true);
+    ,
+      hidebuttonForASinglePano5();
+    );
+  </action>
+
+
+
+<!-- ********** -->
+<!-- BTN_room_info_4 -->
+<!-- id : buttonForASinglePano6 -->
+<!-- ********** -->
+
+  <layer name="buttonForASinglePano6"
+         keep="true"
+         url="%FIRSTXML%/graphics/buttonforasinglepano6/ui_btn_room_info.png"
+         align="topright"
+         x="0"
+         y="250"
+         zorder="16"
+         visible="false"
+         onclick="buttonForASinglePano6OnClick"
+         onout=""
+         onover="set(layer[buttonForASinglePano6over].visible, true);set(layer[buttonForASinglePano6].visible, false);"
+         width="230"
+         height="prop"
+         />
+
+
+<layer name="buttonForASinglePano6over"
+         keep="true"
+         url="%FIRSTXML%/graphics/buttonforasinglepano6/ui_btn_room_info_hover.png"
+         align="topright"
+         x="0"
+         y="250"
+         zorder="16"
+         visible="false"
+         onclick="buttonForASinglePano6OnClick"
+         onout="set(layer[buttonForASinglePano6].visible, true);set(layer[buttonForASinglePano6over].visible, false);"
+         onover=""
+         width="230"
+         height="prop"
+         />
+
+
+  <action name="buttonForASinglePano6OnClick">if(ptplugin[websiteViewer1].isOpen,closeKolorBox_websiteViewer1();,openWebsite_websiteViewer1(buttonForASinglePano6onclick104774websiteViewer1|websiteViewer|toggle_websitewebsite_url, buttonForASinglePano6onclick104774websiteViewer1|websiteViewer|toggle_websitewebsite_title););
+
+
+  </action>
+
+  <events name="buttonForASinglePano6events"
+    onTourStart="showbuttonForASinglePano6();"
+    hidetourcontrols="hidebuttonForASinglePano6();"
+    showtourcontrols="showbuttonForASinglePano6();"
+
+    onPanoStart="showbuttonForASinglePano6();"
+
+    keep="true" />
+  <action name="hidebuttonForASinglePano6">set(layer[buttonForASinglePano6].visible, false);</action>
+  <action name="showbuttonForASinglePano6">
+    set(display_buttonForASinglePano6, false);
+    if(tour_displaycontrols,
+
+
+    if (xml.scene == pano462, set(display_buttonForASinglePano6, true); );
+
+    if (xml.scene == pano463, set(display_buttonForASinglePano6, true); );
+
+    if (xml.scene == pano465, set(display_buttonForASinglePano6, true); );
+
+
+    set(layer[buttonForASinglePano6over].visible, false);
+
+    );
+    if (display_buttonForASinglePano6,
+      set(layer[buttonForASinglePano6].visible, true);
+    ,
+      hidebuttonForASinglePano6();
+    );
+  </action>
+
+
+
+<!-- ********** -->
+<!-- BTN_room_book_4 -->
+<!-- id : buttonForASinglePano7 -->
+<!-- ********** -->
+
+  <layer name="buttonForASinglePano7"
+         keep="true"
+         url="%FIRSTXML%/graphics/buttonforasinglepano7/ui_btn_room_book.png"
+         align="topright"
+         x="0"
+         y="200"
+         zorder="17"
+         visible="false"
+         onclick="buttonForASinglePano7OnClick"
+         onout=""
+         onover="set(layer[buttonForASinglePano7over].visible, true);set(layer[buttonForASinglePano7].visible, false);"
+         width="230"
+         height="prop"
+         />
+
+
+<layer name="buttonForASinglePano7over"
+         keep="true"
+         url="%FIRSTXML%/graphics/buttonforasinglepano7/ui_btn_room_book_hover.png"
+         align="topright"
+         x="0"
+         y="200"
+         zorder="17"
+         visible="false"
+         onclick="buttonForASinglePano7OnClick"
+         onout="set(layer[buttonForASinglePano7].visible, true);set(layer[buttonForASinglePano7over].visible, false);"
+         onover=""
+         width="230"
+         height="prop"
+         />
+
+
+  <action name="buttonForASinglePano7OnClick">getmessage(urltoopen,buttonForASinglePano7onclick103977openurlwebsiteurl);openurl(get(urltoopen),_blank);
+
+
+  </action>
+
+  <events name="buttonForASinglePano7events"
+    onTourStart="showbuttonForASinglePano7();"
+    hidetourcontrols="hidebuttonForASinglePano7();"
+    showtourcontrols="showbuttonForASinglePano7();"
+
+    onPanoStart="showbuttonForASinglePano7();"
+
+    keep="true" />
+  <action name="hidebuttonForASinglePano7">set(layer[buttonForASinglePano7].visible, false);</action>
+  <action name="showbuttonForASinglePano7">
+    set(display_buttonForASinglePano7, false);
+    if(tour_displaycontrols,
+
+
+    if (xml.scene == pano462, set(display_buttonForASinglePano7, true); );
+
+    if (xml.scene == pano463, set(display_buttonForASinglePano7, true); );
+
+    if (xml.scene == pano465, set(display_buttonForASinglePano7, true); );
+
+
+    set(layer[buttonForASinglePano7over].visible, false);
+
+    );
+    if (display_buttonForASinglePano7,
+      set(layer[buttonForASinglePano7].visible, true);
+    ,
+      hidebuttonForASinglePano7();
+    );
+  </action>
+
+
+
+  <!-- Sounds Management -->
+  <plugin name="soundinterface"
+          preload="true"
+          url.flash="%SWFPATH%/graphics/soundinterface.swf"
+          url.html5="%FIRSTXML%/graphics/soundinterface.js"
+          rootpath="%$videos_sounds_path%/sounds"
+          backgroundsound=""
+          backgroundsoundloops="0"
+          bgsound="false"
+          bgsoundpaused="false"
+          bgsoundloopended="false"
+          bgsoundtoforce = "false"
+          volumeinitialized="false"
+          started="true"
+          keep="true"/>
+  <events name="soundmanagementevents"
+          onnewpano="if(plugin[soundinterface].started,playbackgroundsound(););"
+          onxmlcomplete="soundinterfaceonxmlcomplete();"
+          keep="true"/>
+  <action name="soundinterfaceonxmlcomplete">
+    ifnot(plugin[soundinterface].volumeinitialized,
+      div(plugin[soundinterface].volume, tour_soundsvolume, 100);
+      set(plugin[soundinterface].volumeinitialized,true);
+    );
+  </action>
+  <action name="playsound3Dwhenpossible">
+    set(really_play_sound, true);
+    if (tour_current_played_sound,
+      if (%1 == tour_current_played_sound,
+        delete(tour_current_played_sound);
+        set(tour_current_played_sound_state, 0);
+        delete(tour_current_played_sound_paused);
+        stopsound(%1);
+        set(really_play_sound, false);
+        if(%4,
+          delete(tour_current_played_sound_pausesound);
+          resumeTourSoundsActions(true,true,true,true,true);
+        );
+      );
+    );
+    if (really_play_sound,
+      if (tour_current_played_sound,
+        stopsound(get(tour_current_played_sound));
+
+        ifnot(%4,
+          if(tour_current_played_sound_pausesound,
+            delete(tour_current_played_sound_pausesound);
+            resumeTourSoundsActions(true,true,true,true,true);
+          );
+        );
+      );
+      if(%4,
+        set(tour_current_played_sound_pausesound, true);
+        pauseTourSoundsActions(true,false,true,true,true);
+      );
+      set(tour_current_played_sound, %1);
+      if(tour_current_played_video,
+        set(tour_current_played_sound_state, 2);
+      ,
+        set(tour_current_played_sound_state, 1);
+      );
+      set(tour_current_played_sound_paused, false);
+      if (%3,
+        if (device.flash,
+          div(volume, tour_soundsvolume, 100);
+          if(%9 != null,
+            playsound3D(%1,%2,%5,%6,%7,get(volume),%8,stopsound3Dwhenpossible(%1,%4));
+          ,
+            playsound3D(%1,%2,%5,%6,%7,get(volume),%8);
+          );
+        ,
+          if(%9 != null,
+            playsound(%1,%2,%8,stopsound3Dwhenpossible(%1,%4));
+          ,
+            playsound(%1,%2,%8);
+          );
+        );
+      ,
+        if(%6 != null,
+          playsound(%1,%2,%5,stopsound3Dwhenpossible(%1,%4));
+        ,
+          playsound(%1,%2,%5);
+        );
+      );
+
+      ifnot(tour_soundson,
+        set(tour_current_played_sound_paused, true);
+        pausesound(%1);
+      );
+    );
+  </action>
+  <action name="stopsound3Dwhenpossible">
+    if (%1 == tour_current_played_sound,
+      delete(tour_current_played_sound);
+      set(tour_current_played_sound_state, 0);
+      delete(tour_current_played_sound_paused);
+
+      ifnot(device.safari,
+        stopsound(%1);
+      );
+      if(%2,
+        delete(tour_current_played_sound_pausesound);
+        resumeTourSoundsActions(true,true,true,true,true);
+      );
+    );
+  </action>
+  <action name="playbackgroundsound">
+  if(playsound,
+    if (xml.scene,
+      if (scene[get(xml.scene)].backgroundsound,
+        if (plugin[soundinterface].backgroundsound != scene[get(xml.scene)].backgroundsound,
+          copy(plugin[soundinterface].backgroundsound, scene[get(xml.scene)].backgroundsound);
+          copy(plugin[soundinterface].backgroundsoundloops, scene[get(xml.scene)].backgroundsoundloops);
+          if (tour_soundson,
+            set(plugin[soundinterface].bgsound, true);
+            set(plugin[soundinterface].bgsoundpaused, false);
+            set(plugin[soundinterface].bgsoundloopended, false);
+            set(plugin[soundinterface].bgsoundtoforce, false);
+            if(scene[get(xml.scene)].video == false OR (scene[get(xml.scene)].video == true AND scene[get(xml.scene)].scenevideomute == true),
+              if(plugin[soundinterface].backgroundsoundloops GT 0,
+                playsound(bgsoundname, get(plugin[soundinterface].backgroundsound), get(plugin[soundinterface].backgroundsoundloops), stopbackgroundsoundoncomplete());
+              ,
+                playsound(bgsoundname, get(plugin[soundinterface].backgroundsound), get(plugin[soundinterface].backgroundsoundloops));
+              );
+            );
+           ,
+            set(plugin[soundinterface].bgsoundtoforce, true);
+            set(plugin[soundinterface].bgsound, false);
+          );
+        ,
+          if (tour_soundson,
+            if((plugin[soundinterface].bgsoundpaused == true AND scene[get(xml.scene)].video == false) OR (scene[get(xml.scene)].video == true AND scene[get(xml.scene)].scenevideomute == true),
+              resumesound(bgsoundname);
+              set(plugin[soundinterface].bgsoundpaused, false);
+            );
+          ,
+            set(plugin[soundinterface].bgsoundtoforce, true);
+            set(plugin[soundinterface].bgsound, false);
+          );
+        );
+      );
+    );
+  ,
+    delayedcall(0.2, playbackgroundsound());
+  );
+  </action>
+  <action name="stopbackgroundsoundoncomplete">
+    if (plugin[soundinterface].backgroundsound,
+    if (plugin[soundinterface].backgroundsoundloops GT 0,
+
+      set(plugin[soundinterface].backgroundsoundloops, 0);
+      set(plugin[soundinterface].bgsound, false);
+      set(plugin[soundinterface].bgsoundpaused, false);
+      set(plugin[soundinterface].bgsoundloopended, true);
+    );
+    );
+  </action>
+  <action name="resetbackgroundsoundifneeded">
+    if (xml.scene,
+      if (scene[get(xml.scene)].backgroundsound != scene[%1].backgroundsound,
+        if(plugin[soundinterface].backgroundsound,
+          stopsound(bgsoundname);
+        );
+        set(plugin[soundinterface].backgroundsound, "");
+        set(plugin[soundinterface].backgroundsoundloops, 0);
+        set(plugin[soundinterface].bgsound, false);
+        set(plugin[soundinterface].bgsoundpaused, false);
+        set(plugin[soundinterface].bgsoundloopended, false);
+      );
+    );
+  </action>
+  <action name="pausebackgroundsound">
+    if(plugin[soundinterface].backgroundsound,
+      if (plugin[soundinterface].bgsound,
+        if(plugin[soundinterface].bgsoundpaused == false AND plugin[soundinterface].bgsoundloopended == false,
+          pausesound(bgsoundname);
+          set(plugin[soundinterface].bgsoundpaused, true);
+        );
+      );
+    );
+    
+  </action>
+  <action name="resumebackgroundsound">
+    set(bgSoundOnResume, true);
+    set(forceBgSoundOnResume, true);
+    if(layer[displayedStandardVideo],
+    if(layer[displayedStandardVideo].pausebgsound AND tour_current_played_video,
+      set(bgSoundOnResume, false);
+      set(forceBgSoundOnResume, false);
+    ););
+    if(layer[webvideodisplay_player],
+    if(layer[webvideodisplay_player].pausebgsound AND tour_current_played_web_video,
+      set(bgSoundOnResume, false);
+      set(forceBgSoundOnResume, false);
+    ););
+    if(tour_current_played_sound_pausesound AND tour_current_played_sound,
+      set(bgSoundOnResume, false);
+    );
+    ifnot(plugin[soundinterface].backgroundsound AND scene[get(xml.scene)].backgroundsound,
+      set(bgSoundOnResume, false);
+    );
+    if(videospots_playing GT 0,
+      set(bgSoundOnResume, false);
+      set(forceBgSoundOnResume, false);
+    );
+    if(bgSoundOnResume,
+      if (plugin[soundinterface].backgroundsound,
+        if (tour_soundson,
+          if (plugin[soundinterface].bgsound AND plugin[soundinterface].bgsoundloopended == false,
+            if((plugin[soundinterface].bgsoundpaused == true AND scene[get(xml.scene)].video == false) OR (scene[get(xml.scene)].video == true AND scene[get(xml.scene)].scenevideomute == true),
+              resumesound(bgsoundname);
+              set(plugin[soundinterface].bgsoundpaused, false);
+            ,
+
+              if(device.mobile OR device.tablet OR device.safari OR device.chrome,
+                resumesound(bgsoundname);
+                set(plugin[soundinterface].bgsoundpaused, false);
+              );
+            );
+          ,
+            if(((plugin[soundinterface].bgsoundpaused == true OR plugin[soundinterface].bgsoundtoforce == true) AND scene[get(xml.scene)].video == false) OR (scene[get(xml.scene)].video == true AND scene[get(xml.scene)].scenevideomute == true),
+              set(plugin[soundinterface].bgsound, true);
+              set(plugin[soundinterface].bgsoundpaused, false);
+              set(plugin[soundinterface].bgsoundloopended, false);
+              set(plugin[soundinterface].bgsoundtoforce, false);
+              if(plugin[soundinterface].backgroundsoundloops GT 0,
+                playsound(bgsoundname, get(plugin[soundinterface].backgroundsound), get(plugin[soundinterface].backgroundsoundloops), stopbackgroundsoundoncomplete());
+              ,
+                playsound(bgsoundname, get(plugin[soundinterface].backgroundsound), get(plugin[soundinterface].backgroundsoundloops));
+              );
+            );
+          );
+        );
+      );
+      
+    ,
+      if(forceBgSoundOnResume,
+        playbackgroundsound();
+        
+      );
+    );
+  </action>
+  <action name="preloadSounds">
+    preloadsound("fjordnosundakaze.mp3");
+    preloadsound("room_music.mp3");
+  </action>
+
+  <action name="play3DLocalSounds">
+    if (xml.scene, if (scene[get(xml.scene)].haslocalsounds, playpanolocalsounds();););
+  </action>
+  <action name="stop3DLocalSounds">
+    if (xml.scene, if (scene[get(xml.scene)].haslocalsounds, stoppanolocalsounds();););
+  </action>
+  <action name="resume3DLocalSounds">
+    if (xml.scene, if (scene[get(xml.scene)].haslocalsounds, 
+      set(kill3dSoundOnResume, true);
+      if(layer[displayedStandardVideo],
+      if(layer[displayedStandardVideo].pausebgsound,
+      if(tour_current_played_video,
+        set(kill3dSoundOnResume, false);
+      );););
+      if(layer[webvideodisplay_player],
+      if(layer[webvideodisplay_player].pausebgsound,
+      if(tour_current_played_web_video,
+        set(kill3dSoundOnResume, false);
+      );););
+      if(tour_current_played_sound_pausesound,
+      if(tour_current_played_sound,
+        set(kill3dSoundOnResume, false);
+      ););
+      if(kill3dSoundOnResume,
+        resumepanolocalsounds();
+      );
+    ););
+  </action>
+  <action name="pause3DLocalSounds">
+    if (xml.scene, if (scene[get(xml.scene)].haslocalsounds, pausepanolocalsounds();););
+  </action>
+  <action name="set3DLocalSoundsVolume">
+    if (xml.scene, if (scene[get(xml.scene)].haslocalsounds, setpanolocalsoundsvolume();););
+  </action>
+  <action name="playTourSounds">
+    set(tour_soundson, true);events.dispatch(playtoursoundsevent);
+    resumeTourSoundsActions(true,true,true,true,true);
+  </action>
+  <action name="stopTourSounds">
+    set(tour_soundson, false);events.dispatch(stoptoursoundsevent);
+    pauseTourSoundsActions(true,true,true,true,true);
+  </action>
+  <action name="setTourSoundsVolume">
+    set(tour_soundsvolume, %1);events.dispatch(changetoursoundsevent);
+    div(volume, tour_soundsvolume, 100);
+    set(plugin[soundinterface].volume, get(volume));
+    set3DLocalSoundsVolume();
+  </action>
+  <action name="playTourSoundsActions">
+    if(%1,
+      if(plugin[soundinterface],
+        if(plugin[soundinterface].started,
+        play3DLocalSounds();
+        );
+      );
+    );
+    if(%2,
+      if(plugin[soundinterface],
+        if(plugin[soundinterface].started,
+          resumebackgroundsound();
+        );
+      );
+    );
+  </action>
+  <action name="stopTourSoundsActions">
+    if(%1,
+      stop3DLocalSounds();
+    );
+    if(%2,
+      stopSoundActionsSounds();
+    );
+    if(%3,
+      stopVideoActionsSounds();
+    );
+    if(%4,
+      pausebackgroundsound();
+    );
+  </action>
+  <action name="resumeTourSoundsActions">
+    if(%1,
+      if(plugin[soundinterface],
+        if(plugin[soundinterface].started,
+        resume3DLocalSounds();
+        );
+      );
+    );
+    if(%2,
+      resumeSoundActionsSounds();
+    );
+    if(%3,
+      resumeVideoActionsSounds();
+    );
+    if(%4,
+      if(%5,
+        if(plugin[soundinterface],
+          if(plugin[soundinterface].started,
+            resumebackgroundsound();
+          );
+        );
+      ,
+        pausebackgroundsound();
+      );
+    );
+  </action>
+  <action name="pauseTourSoundsActions">
+    if(%1,
+      pause3DLocalSounds();
+    );
+    if(%2,
+      pauseSoundActionsSounds();
+    );
+    if(%3,
+      pauseVideoActionsSounds();
+    );
+    if(%4,
+      if(%5,
+        pausebackgroundsound();
+      ,
+        if(plugin[soundinterface],
+          if(plugin[soundinterface].started,
+            resumebackgroundsound();
+          );
+        );
+      );
+    );
+  </action>
+  <action name="stopSoundActionsSounds">
+    if (tour_current_played_sound,
+      delete(tour_current_played_sound_paused);
+      stopsound(get(tour_current_played_sound));
+      delete(tour_current_played_sound);
+      set(tour_current_played_sound_state, 0);
+    );
+  </action>
+  <action name="stopVideoActionsSounds">
+    if(tour_current_played_video,
+      if(layer[displayedStandardVideo],
+        layer[displayedStandardVideo].stop();
+        removelayer(displayedStandardVideo);
+        if(layer[displayedStandardVideoOverlayButton], removelayer(displayedStandardVideoOverlayButton); );
+        if(layer[displayedStandardVideoOverlay], removelayer(displayedStandardVideoOverlay); );
+        delete(tour_current_played_video);
+        set(tour_current_played_video_state, 0);
+      );
+    );
+    if(tour_current_played_web_video,
+      displayWebVideoObjectClose();
+    );
+  </action>
+  <action name="resumeSoundActionsSounds">
+    if (tour_current_played_sound,
+      set(resumeSoundActionsVerification, true);
+      if(tour_current_played_video,
+        if(tour_current_played_sound_state LT tour_current_played_video_state,
+          set(resumeSoundActionsVerification, false);
+        );
+      );
+      if(resumeSoundActionsVerification,
+        if (tour_soundson,
+          if(tour_current_played_sound_paused,
+            set(tour_current_played_sound_paused, false);
+            resumesound(get(tour_current_played_sound));
+          ,
+
+            if(device.mobile OR device.tablet OR device.safari OR device.chrome,
+              set(tour_current_played_sound_paused, false);
+              resumesound(get(tour_current_played_sound));
+            );
+          );
+        );
+      );
+    );
+  </action>
+  <action name="resumeVideoActionsSounds">
+    if(tour_current_played_video,
+      set(resumeVideoActionsVerification, true);
+      if(tour_current_played_sound,
+        if(tour_current_played_video_state LT tour_current_played_sound_state,
+          set(resumeVideoActionsVerification, false);
+        );
+      );
+      if(resumeVideoActionsVerification,
+        if (tour_soundson,
+          if(device.flash OR (device.webgl AND !device.ios),
+            div(volume, tour_soundsvolume, 100);
+            set(layer[displayedStandardVideo].volume, get(volume));
+          ,
+            ifnot(device.ios,
+              js(kpanotour.Sounds.startVideosSounds(get(volume)));
+            ,
+              if(tour_soundsvolume GT 0,
+                set(layer[displayedStandardVideo].muted, false);
+              ,
+                set(layer[displayedStandardVideo].muted, true);
+              );
+            );
+          );
+        ,
+          if(device.flash OR (device.webgl AND !device.ios),
+            set(layer[displayedStandardVideo].volume, 0);
+          ,
+            ifnot(device.ios,
+              js(kpanotour.Sounds.stopVideosSounds());
+            ,
+              set(layer[displayedStandardVideo].muted, true);
+            );
+          );
+        );
+      );
+    );
+  </action>
+  <action name="pauseSoundActionsSounds">
+    if (tour_current_played_sound,
+      ifnot(tour_current_played_sound_paused,
+        set(tour_current_played_sound_paused, true);
+        pausesound(get(tour_current_played_sound));
+      );
+    );
+  </action>
+  <action name="pauseVideoActionsSounds">
+    if(tour_current_played_video,
+      if(device.flash OR (device.webgl AND !device.ios),
+        set(layer[displayedStandardVideo].volume, 0);
+      ,
+        ifnot(device.ios,
+          js(kpanotour.Sounds.stopVideosSounds());
+        ,
+          set(layer[displayedStandardVideo].muted, true);
+        );
+      );
+    );
+  </action>
+
+  <!-- Hide / Show Controls -->
+  <action name="hideTourControls">set(tour_displaycontrols, false);events.dispatch(hidetourcontrols);</action>
+  <action name="showTourControls">set(tour_displaycontrols, true); events.dispatch(showtourcontrols);</action>
+
+
+  <action name="displayWebVideo">
+    if(layer[webvideodisplay_bg],
+
+    ,
+      <!-- add overlay -->
+      addlayer(webvideodisplay_bg);
+      set(layer[webvideodisplay_bg].type, container);
+      set(layer[webvideodisplay_bg].zorder, 98);
+      set(layer[webvideodisplay_bg].align, topleft);
+      set(layer[webvideodisplay_bg].width, 100%);
+      set(layer[webvideodisplay_bg].height, 100%);
+      set(layer[webvideodisplay_bg].bgcolor, %16);
+      set(layer[webvideodisplay_bg].bgalpha, %17);
+      set(layer[webvideodisplay_bg].bgcapture, true);
+      set(layer[webvideodisplay_bg].handcursor, false);
+      set(layer[webvideodisplay_bg].alpha, 0.0);
+      set(layer[webvideodisplay_bg].onclick, displayWebVideoObjectClose() );
+      tween(layer[webvideodisplay_bg].alpha, 1.0, 0.5, default,
+
+
+        addlayer(webvideodisplay_player);
+        set(layer[webvideodisplay_player].parent, layer[webvideodisplay_bg]);
+        set(layer[webvideodisplay_player].align, %13);
+        set(layer[webvideodisplay_player].x, %14);
+        set(layer[webvideodisplay_player].y, %15);
+        set(layer[webvideodisplay_player].alpha, 0.0);
+        set(layer[webvideodisplay_player].pauseautorotate, %18);
+        set(layer[webvideodisplay_player].pausebgsound, %19);
+
+        sub(maxstagewidth, get(stagewidth), %14);
+        sub(maxstageheight, get(stageheight), %15);
+
+        if('4:3' == '%3',
+          div(aspect, 4, 3);
+        ,
+          if('2.39:1' == '%3',
+            div(aspect, 2.39, 1);
+          ,
+            div(aspect, 16, 9);
+          );
+        );
+        if(%9,
+          if(%10 == 'pixel',
+            set(new_videowidth, %9);
+            div(new_videoheight, get(new_videowidth), get(aspect));
+          ,
+            mul(new_videowidth, get(maxstagewidth), %9);
+            div(new_videowidth, 100);
+            div(new_videoheight, get(new_videowidth), get(aspect));
+          );
+        ,
+          ifnot(%11,
+            set(max_videoheight, %2);
+            set(new_videowidth, %1);
+            set(new_videoheight, %2);
+          );
+        );
+        if(%11,
+          ifnot(%9,
+            if(%12 == 'pixel',
+              set(new_videoheight, %11);
+              mul(new_videowidth, get(new_videoheight), get(aspect));
+            ,
+              mul(new_videoheight, get(maxstageheight), %11);
+              div(new_videoheight, 100);
+              mul(new_videowidth, get(new_videoheight), get(aspect));
+            );
+            set(max_videoheight, get(new_videoheight));
+          ,
+            if(%12 == 'pixel',
+              set(max_videoheight, %11);
+            ,
+              mul(max_videoheight, get(maxstageheight), %11);
+              div(max_videoheight, 100);
+            );
+          );
+        ,
+          set(max_videoheight, get(new_videoheight));
+        );
+        if(new_videowidth GT maxstagewidth,
+          set(new_videowidth, get(maxstagewidth));
+          div(new_videoheight, get(new_videowidth), get(aspect));
+        );
+        if(max_videoheight GT maxstageheight,
+          set(max_videoheight, get(maxstageheight));
+        );
+        if(new_videoheight GT max_videoheight,
+          set(new_videoheight, get(max_videoheight));
+          mul(new_videowidth, get(new_videoheight), get(aspect));
+        );
+        roundval(new_videowidth);
+        roundval(new_videoheight);
+        set(layer[webvideodisplay_player].width, get(new_videowidth));
+        set(layer[webvideodisplay_player].height, get(new_videoheight));
+
+        set(tour_current_played_web_video, %8);
+
+        if(device.html5,
+
+          txtadd(iframecode, '[iframe width="',get(layer[webvideodisplay_player].width),'" height="',get(layer[webvideodisplay_player].height),'" src="','%4','%8','?','%6','" frameborder="0" allowfullscreen][/iframe]');
+          set(layer[webvideodisplay_player].html, get(iframecode));
+          set(layer[webvideodisplay_player].padding, 0);
+          set(layer[webvideodisplay_player].type, 'text');
+          set(layer[webvideodisplay_player].onloaded, displayWebVideoObjectReady() );
+        ,
+
+          txtadd(embedurl, '%5','%8','%7');
+          set(layer[webvideodisplay_player].onloaded, registercontentsize(%1,%2);displayWebVideoObjectReady(); );
+          set(layer[webvideodisplay_player].url, get(embedurl));
+        );
+      );
+    );
+  </action>
+  <action name="displayWebVideoObjectReady">
+    if(layer[webvideodisplay_player],
+      set(layer[webvideodisplay_player].currentCall, true);
+      events.dispatch(onremovedisplayedobject);
+      tween(layer[webvideodisplay_player].alpha, 1.0, default, default,
+        if(layer[webvideodisplay_player].pauseautorotate,pauseautorotation(forcehotspot);
+);
+        if(layer[webvideodisplay_player].pausebgsound,pauseTourSoundsActions(true,true,false,true,true););
+      );
+    );
+  </action>
+  <action name="displayWebVideoObjectClose">
+    if(layer[webvideodisplay_player],
+      if(layer[webvideodisplay_player].currentCall,
+        set(layer[webvideodisplay_player].currentCall, false);
+      ,
+        set(layer[webvideodisplay_bg].onclick, null);
+        delete(tour_current_played_web_video);
+        tween(layer[webvideodisplay_player].alpha, 0.0, 0.25, default);
+        tween(layer[webvideodisplay_bg].alpha,0.0, 0.50, default,
+          if(layer[webvideodisplay_player].pauseautorotate,resumeautorotation(forcehotspot);
+);
+          if(layer[webvideodisplay_player].pausebgsound,resumeTourSoundsActions(true,true,true,true,true););
+          removelayer(webvideodisplay_bg);
+          removelayer(webvideodisplay_player);
+        );
+      );
+    );
+  </action>
+  <events name="displayWebVideoObjectEvents" keep="true" onremovedisplayedobject="displayWebVideoObjectClose();"/>
+
+  <!-- Share Tour -->
+  <action name="shareTour">events.dispatch(onsharetour);</action>
+
+  <!-- Fullscreen Management -->
+  <action name="exitFullScreen" devices="fullscreensupport">set(tour_fullscreen,false);js(setFullscreen(false));</action>
+  <action name="enterFullScreen" devices="fullscreensupport">set(tour_fullscreen,true);js(setFullscreen(true));</action>
+  <action name="switchFullScreen">if(tour_fullscreen,exitFullScreen();,enterFullScreen(););</action>
+
+  
+  <events name="krpanoExitFullscreenEvent"
+    onexitfullscreen="if(tour_fullscreen,exitFullScreenChangeEvent(););"
+    keep="true" />
+
+  <action name="exitFullScreenChangeEvent" devices="fullscreensupport">set(tour_fullscreen,false);events.dispatch(onexitfullscreen);</action>
+  <action name="enterFullScreenChangeEvent" devices="fullscreensupport">set(tour_fullscreen,true);events.dispatch(onenterfullscreen);</action>
+  <action name="exitFullScreenFallback">set(fullscreen,false);</action>
+  <action name="enterFullScreenFallback">set(fullscreen,true);</action>
+  
+  <action name="resizeFullScreenEvent">delayedcall(0,updatescreen(););</action>
+
+</krpano>

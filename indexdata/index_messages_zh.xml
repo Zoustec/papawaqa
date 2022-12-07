@@ -1,0 +1,325 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<krpano>
+
+<!-- ************************ -->
+<!--         Messages         -->
+<!-- ************************ -->
+
+  <data name="zh_project_title"><![CDATA[泰安觀止 Demo]]></data>
+
+
+
+  <data name="zh_pano10_title"><![CDATA[IMG_1361 Panorama]]></data>
+  <data name="zh_spotpolygon29_tooltip"><![CDATA[觀止相簿]]></data>
+  <data name="zh_spotpolygon29websiteViewer|websiteViewer|displaywebsitewebsite_url"><![CDATA[.\webpage\gallery.html]]></data>
+  <data name="zh_spotpolygon29websiteViewer|websiteViewer|displaywebsitewebsite_title"><![CDATA[]]></data>
+  <data name="zh_spotpoint36_tooltip"><![CDATA[迴廊外]]></data>
+  <data name="zh_spotpoint84websiteViewer|websiteViewer|displaywebsitewebsite_url"><![CDATA[.\webpage\artWork.html]]></data>
+  <data name="zh_spotpoint84websiteViewer|websiteViewer|displaywebsitewebsite_title"><![CDATA[]]></data>
+  <data name="zh_spotpoint85websiteViewer|websiteViewer|displaywebsitewebsite_url"><![CDATA[.\webpage\artWork.html]]></data>
+  <data name="zh_spotpoint85websiteViewer|websiteViewer|displaywebsitewebsite_title"><![CDATA[]]></data>
+  <data name="zh_spotpoint86websiteViewer|websiteViewer|displaywebsitewebsite_url"><![CDATA[.\webpage\artWork.html]]></data>
+  <data name="zh_spotpoint86websiteViewer|websiteViewer|displaywebsitewebsite_title"><![CDATA[]]></data>
+  <data name="zh_spotpoint87websiteViewer|websiteViewer|displaywebsitewebsite_url"><![CDATA[.\webpage\artWork.html]]></data>
+  <data name="zh_spotpoint87websiteViewer|websiteViewer|displaywebsitewebsite_title"><![CDATA[]]></data>
+  <data name="zh_spotpoint211_tooltip"><![CDATA[觀止空拍]]></data>
+  <data name="zh_spotpoint211displaywebvideovideoid"><![CDATA[J2izkQSoHXY]]></data>
+  <data name="zh_spotpoint270websiteViewer|websiteViewer|displaywebsitewebsite_url"><![CDATA[.\webpage\gallery.html]]></data>
+  <data name="zh_spotpoint270websiteViewer|websiteViewer|displaywebsitewebsite_title"><![CDATA[]]></data>
+  <data name="zh_spotpoint272openurlwebsiteurl"><![CDATA[https://order.papawaqa.com.tw/]]></data>
+
+  <data name="zh_panogroup14_title"><![CDATA[房型]]></data>
+
+  <data name="zh_pano11_title"><![CDATA[觀星情房]]></data>
+  <data name="zh_spotpoint102_tooltip"><![CDATA[回到大廳]]></data>
+  <data name="zh_spotpoint152websiteViewer|websiteViewer|displaywebsitewebsite_url"><![CDATA[.\webpage\furniture.html]]></data>
+  <data name="zh_spotpoint152websiteViewer|websiteViewer|displaywebsitewebsite_title"><![CDATA[]]></data>
+  <data name="zh_spotpoint155websiteViewer|websiteViewer|displaywebsitewebsite_url"><![CDATA[.\webpage\furniture.html]]></data>
+  <data name="zh_spotpoint155websiteViewer|websiteViewer|displaywebsitewebsite_title"><![CDATA[]]></data>
+  <data name="zh_spotpoint156websiteViewer|websiteViewer|displaywebsitewebsite_url"><![CDATA[.\webpage\furniture.html]]></data>
+  <data name="zh_spotpoint156websiteViewer|websiteViewer|displaywebsitewebsite_title"><![CDATA[]]></data>
+  <data name="zh_spotpoint157websiteViewer|websiteViewer|displaywebsitewebsite_url"><![CDATA[.\webpage\furniture.html]]></data>
+  <data name="zh_spotpoint157websiteViewer|websiteViewer|displaywebsitewebsite_title"><![CDATA[]]></data>
+  <data name="zh_spotpoint158websiteViewer|websiteViewer|displaywebsitewebsite_url"><![CDATA[.\webpage\furniture.html]]></data>
+  <data name="zh_spotpoint158websiteViewer|websiteViewer|displaywebsitewebsite_title"><![CDATA[]]></data>
+  <data name="zh_pano463_title"><![CDATA[觀月情房02]]></data>
+  <data name="zh_spotpoint473_tooltip"><![CDATA[回到大廳]]></data>
+  <data name="zh_pano465_title"><![CDATA[觀月情房03]]></data>
+
+
+  <data name="zh_pano12_title"><![CDATA[IMG_2099 Panorama]]></data>
+  <data name="zh_spotpoint99_tooltip"><![CDATA[迎賓入口]]></data>
+  <data name="zh_spotpoint100_tooltip"><![CDATA[典藏館]]></data>
+
+
+  <data name="zh_pano31_title"><![CDATA[IMG_2223 Panorama]]></data>
+  <data name="zh_spotpoint73_tooltip"><![CDATA[迎賓入口]]></data>
+  <data name="zh_spotpoint285_tooltip"><![CDATA[---製作中---]]></data>
+
+
+  <data name="zh_pano32_title"><![CDATA[IMG_2250 Panorama]]></data>
+  <data name="zh_spotpoint35_tooltip"><![CDATA[迎賓車道]]></data>
+  <data name="zh_spotpoint72_tooltip"><![CDATA[往典藏館]]></data>
+  <data name="zh_spotpoint89websiteViewer|websiteViewer|displaywebsitewebsite_url"><![CDATA[.\webpage\artWork.html]]></data>
+  <data name="zh_spotpoint89websiteViewer|websiteViewer|displaywebsitewebsite_title"><![CDATA[]]></data>
+  <data name="zh_spotpoint103_tooltip"><![CDATA[往大廳]]></data>
+
+
+  <data name="zh_pano92_title"><![CDATA[IMG_0929 Panorama]]></data>
+  <data name="zh_spotpoint101_tooltip"><![CDATA[往入口]]></data>
+  <data name="zh_spotpoint273websiteViewer|websiteViewer|displaywebsitewebsite_url"><![CDATA[.\webpage\gallery.html]]></data>
+  <data name="zh_spotpoint273websiteViewer|websiteViewer|displaywebsitewebsite_title"><![CDATA[]]></data>
+  <data name="zh_spotpoint275websiteViewer|websiteViewer|displaywebsitewebsite_url"><![CDATA[.\webpage\artWork.html]]></data>
+  <data name="zh_spotpoint275websiteViewer|websiteViewer|displaywebsitewebsite_title"><![CDATA[]]></data>
+  <data name="zh_spotpoint278websiteViewer|websiteViewer|displaywebsitewebsite_url"><![CDATA[https://www.papawaqa.com.tw/design/]]></data>
+  <data name="zh_spotpoint278websiteViewer|websiteViewer|displaywebsitewebsite_title"><![CDATA[]]></data>
+  <data name="zh_spotpoint279websiteViewer|websiteViewer|displaywebsitewebsite_url"><![CDATA[.\webpage\artWork.html]]></data>
+  <data name="zh_spotpoint279websiteViewer|websiteViewer|displaywebsitewebsite_title"><![CDATA[]]></data>
+  <data name="zh_spotpoint280websiteViewer|websiteViewer|displaywebsitewebsite_url"><![CDATA[.\webpage\artWork.html]]></data>
+  <data name="zh_spotpoint280websiteViewer|websiteViewer|displaywebsitewebsite_title"><![CDATA[]]></data>
+  <data name="zh_spotpoint281websiteViewer|websiteViewer|displaywebsitewebsite_url"><![CDATA[.\webpage\artWork.html]]></data>
+  <data name="zh_spotpoint281websiteViewer|websiteViewer|displaywebsitewebsite_title"><![CDATA[]]></data>
+  <data name="zh_spotpoint282websiteViewer|websiteViewer|displaywebsitewebsite_url"><![CDATA[.\webpage\artWork.html]]></data>
+  <data name="zh_spotpoint282websiteViewer|websiteViewer|displaywebsitewebsite_title"><![CDATA[]]></data>
+  <data name="zh_spotpoint283websiteViewer|websiteViewer|displaywebsitewebsite_url"><![CDATA[.\webpage\artWork.html]]></data>
+  <data name="zh_spotpoint283websiteViewer|websiteViewer|displaywebsitewebsite_title"><![CDATA[]]></data>
+
+
+  <data name="zh_pano93_title"><![CDATA[IMG_1313 Panorama]]></data>
+  <data name="zh_spotpoint96_tooltip"><![CDATA[大廳]]></data>
+  <data name="zh_spotpoint97_tooltip"><![CDATA[迎賓入口]]></data>
+
+
+
+
+	<data name="zh_project_floor_title"><![CDATA[泰安觀止 Demo]]></data>
+	<data name="zh_spotmap77_tooltip"><![CDATA[觀止大廳]]></data>
+	<data name="zh_spotmap78_tooltip"><![CDATA[典藏館外]]></data>
+	<data name="zh_spotmap79_tooltip"><![CDATA[迎賓車道2]]></data>
+	<data name="zh_spotmap80_tooltip"><![CDATA[迎賓車道1]]></data>
+	<data name="zh_spotmap81_tooltip"><![CDATA[xx套房]]></data>
+
+
+  <data name="zh_galleryplay_text"><![CDATA[Play / Pause]]></data>
+  <data name="zh_gallerynavprev_text"><![CDATA[Previous]]></data>
+  <data name="zh_gallerynavnext_text"><![CDATA[Next]]></data>
+  <data name="zh_galleryfullscreen_text"><![CDATA[Fullscreen mode]]></data>
+  <data name="zh_galleryclose_text"><![CDATA[Close]]></data>
+  <data name="zh_gallerypicture_title0"><![CDATA[]]></data>
+  <data name="zh_gallerypicture_caption0"><![CDATA[]]></data>
+  <data name="zh_websiteViewerclose_text"><![CDATA[Close]]></data>
+  <data name="zh_CY_SidebarfileName"><![CDATA[index]]></data>
+  <data name="zh_CY_Sidebarspeed_in"><![CDATA[0.5]]></data>
+  <data name="zh_CY_Sidebarspeed_out"><![CDATA[0.5]]></data>
+  <data name="zh_CY_SidebaropenBtn_alpha"><![CDATA[1]]></data>
+  <data name="zh_CY_SidebarcloseBtn_alpha"><![CDATA[1]]></data>
+  <data name="zh_CY_Sidebarmenu_parents0"><![CDATA[menu_1]]></data>
+  <data name="zh_CY_Sidebarmenu_child_name0"><![CDATA[]]></data>
+  <data name="zh_CY_Sidebartext0"><![CDATA[]]></data>
+  <data name="zh_CY_Sidebarmenu_style0"><![CDATA[]]></data>
+  <data name="zh_CY_Sidebarmenu_parents1"><![CDATA[menu_2]]></data>
+  <data name="zh_CY_Sidebarmenu_child_name1"><![CDATA[]]></data>
+  <data name="zh_CY_Sidebartext1"><![CDATA[]]></data>
+  <data name="zh_CY_Sidebarmenu_style1"><![CDATA[]]></data>
+  <data name="zh_CY_Sidebarmenu_parents12"><![CDATA[menu_3]]></data>
+  <data name="zh_CY_Sidebarmenu_child_name12"><![CDATA[]]></data>
+  <data name="zh_CY_Sidebartext12"><![CDATA[觀止印象]]></data>
+  <data name="zh_CY_Sidebarmenu_style12"><![CDATA[]]></data>
+  <data name="zh_CY_Sidebarmenu_parents3"><![CDATA[menu_4]]></data>
+  <data name="zh_CY_Sidebarmenu_child_name3"><![CDATA[]]></data>
+  <data name="zh_CY_Sidebartext3"><![CDATA[]]></data>
+  <data name="zh_CY_Sidebarmenu_style3"><![CDATA[]]></data>
+  <data name="zh_CY_Sidebarmenu_parents11"><![CDATA[menu_4_1]]></data>
+  <data name="zh_CY_Sidebarmenu_child_name11"><![CDATA[menu_4]]></data>
+  <data name="zh_CY_Sidebartext11"><![CDATA[價目一覽]]></data>
+  <data name="zh_CY_Sidebarmenu_style11"><![CDATA[textStyle_1]]></data>
+  <data name="zh_CY_Sidebarmenu_parents7"><![CDATA[menu_4_2]]></data>
+  <data name="zh_CY_Sidebarmenu_child_name7"><![CDATA[menu_4]]></data>
+  <data name="zh_CY_Sidebartext7"><![CDATA[專案一覽]]></data>
+  <data name="zh_CY_Sidebarmenu_style7"><![CDATA[textStyle_1]]></data>
+  <data name="zh_CY_Sidebarmenu_parents8"><![CDATA[menu_4_3]]></data>
+  <data name="zh_CY_Sidebarmenu_child_name8"><![CDATA[menu_4]]></data>
+  <data name="zh_CY_Sidebartext8"><![CDATA[觀星情房]]></data>
+  <data name="zh_CY_Sidebarmenu_style8"><![CDATA[textStyle_1]]></data>
+  <data name="zh_CY_Sidebarmenu_parents9"><![CDATA[menu_4_4]]></data>
+  <data name="zh_CY_Sidebarmenu_child_name9"><![CDATA[menu_4]]></data>
+  <data name="zh_CY_Sidebartext9"><![CDATA[觀星情房<br>(寵物房)]]></data>
+  <data name="zh_CY_Sidebarmenu_style9"><![CDATA[textStyle_1]]></data>
+  <data name="zh_CY_Sidebarmenu_parents10"><![CDATA[menu_4_5]]></data>
+  <data name="zh_CY_Sidebarmenu_child_name10"><![CDATA[menu_4]]></data>
+  <data name="zh_CY_Sidebartext10"><![CDATA[觀星情房<br>(典藏版)]]></data>
+  <data name="zh_CY_Sidebarmenu_style10"><![CDATA[textStyle_1]]></data>
+  <data name="zh_CY_Sidebarmenu_parents14"><![CDATA[menu_4_6]]></data>
+  <data name="zh_CY_Sidebarmenu_child_name14"><![CDATA[menu_4]]></data>
+  <data name="zh_CY_Sidebartext14"><![CDATA[觀月情房]]></data>
+  <data name="zh_CY_Sidebarmenu_style14"><![CDATA[]]></data>
+  <data name="zh_CY_Sidebarmenu_parents15"><![CDATA[menu_4_7]]></data>
+  <data name="zh_CY_Sidebarmenu_child_name15"><![CDATA[menu_4]]></data>
+  <data name="zh_CY_Sidebartext15"><![CDATA[]]></data>
+  <data name="zh_CY_Sidebarmenu_style15"><![CDATA[]]></data>
+  <data name="zh_CY_Sidebarmenu_parents16"><![CDATA[menu_4_8]]></data>
+  <data name="zh_CY_Sidebarmenu_child_name16"><![CDATA[menu_4]]></data>
+  <data name="zh_CY_Sidebartext16"><![CDATA[]]></data>
+  <data name="zh_CY_Sidebarmenu_style16"><![CDATA[]]></data>
+  <data name="zh_CY_Sidebarmenu_parents17"><![CDATA[menu_4_9]]></data>
+  <data name="zh_CY_Sidebarmenu_child_name17"><![CDATA[menu_4]]></data>
+  <data name="zh_CY_Sidebartext17"><![CDATA[]]></data>
+  <data name="zh_CY_Sidebarmenu_style17"><![CDATA[]]></data>
+  <data name="zh_CY_Sidebarmenu_parents18"><![CDATA[menu_4_10]]></data>
+  <data name="zh_CY_Sidebarmenu_child_name18"><![CDATA[menu_4]]></data>
+  <data name="zh_CY_Sidebartext18"><![CDATA[]]></data>
+  <data name="zh_CY_Sidebarmenu_style18"><![CDATA[]]></data>
+  <data name="zh_CY_Sidebarmenu_parents19"><![CDATA[menu_4_11]]></data>
+  <data name="zh_CY_Sidebarmenu_child_name19"><![CDATA[menu_4]]></data>
+  <data name="zh_CY_Sidebartext19"><![CDATA[]]></data>
+  <data name="zh_CY_Sidebarmenu_style19"><![CDATA[]]></data>
+  <data name="zh_CY_Sidebarmenu_parents20"><![CDATA[menu_4_12]]></data>
+  <data name="zh_CY_Sidebarmenu_child_name20"><![CDATA[menu_4]]></data>
+  <data name="zh_CY_Sidebartext20"><![CDATA[]]></data>
+  <data name="zh_CY_Sidebarmenu_style20"><![CDATA[]]></data>
+  <data name="zh_CY_Sidebarmenu_parents21"><![CDATA[menu_4_13]]></data>
+  <data name="zh_CY_Sidebarmenu_child_name21"><![CDATA[menu_4]]></data>
+  <data name="zh_CY_Sidebartext21"><![CDATA[]]></data>
+  <data name="zh_CY_Sidebarmenu_style21"><![CDATA[]]></data>
+  <data name="zh_CY_Sidebarmenu_parents22"><![CDATA[menu_4_14]]></data>
+  <data name="zh_CY_Sidebarmenu_child_name22"><![CDATA[menu_4]]></data>
+  <data name="zh_CY_Sidebartext22"><![CDATA[]]></data>
+  <data name="zh_CY_Sidebarmenu_style22"><![CDATA[]]></data>
+  <data name="zh_CY_Sidebarmenu_parents4"><![CDATA[menu_5]]></data>
+  <data name="zh_CY_Sidebarmenu_child_name4"><![CDATA[]]></data>
+  <data name="zh_CY_Sidebartext4"><![CDATA[]]></data>
+  <data name="zh_CY_Sidebarmenu_style4"><![CDATA[]]></data>
+  <data name="zh_CY_Sidebarmenu_parents2"><![CDATA[menu_6]]></data>
+  <data name="zh_CY_Sidebarmenu_child_name2"><![CDATA[]]></data>
+  <data name="zh_CY_Sidebartext2"><![CDATA[]]></data>
+  <data name="zh_CY_Sidebarmenu_style2"><![CDATA[]]></data>
+  <data name="zh_CY_Sidebarmenu_parents5"><![CDATA[menu_7]]></data>
+  <data name="zh_CY_Sidebarmenu_child_name5"><![CDATA[]]></data>
+  <data name="zh_CY_Sidebartext5"><![CDATA[觀止行程]]></data>
+  <data name="zh_CY_Sidebarmenu_style5"><![CDATA[]]></data>
+  <data name="zh_CY_Sidebarmenu_parents6"><![CDATA[menu_8]]></data>
+  <data name="zh_CY_Sidebarmenu_child_name6"><![CDATA[]]></data>
+  <data name="zh_CY_Sidebartext6"><![CDATA[觀止路線]]></data>
+  <data name="zh_CY_Sidebarmenu_style6"><![CDATA[]]></data>
+  <data name="zh_CY_Sidebarmenu_parents13"><![CDATA[menu_9]]></data>
+  <data name="zh_CY_Sidebarmenu_child_name13"><![CDATA[]]></data>
+  <data name="zh_CY_Sidebartext13"><![CDATA[]]></data>
+  <data name="zh_CY_Sidebarmenu_style13"><![CDATA[]]></data>
+  <data name="zh_CY_Sidebarbutton_name0"><![CDATA[langSwitch]]></data>
+  <data name="zh_CY_SidebarcustomName0"><![CDATA[textStyle_1]]></data>
+  <data name="zh_CY_Sidebarlogo_actionchooserID10464openurlwebsiteurl"><![CDATA[https://www.papawaqa.com.tw/]]></data>
+  <data name="zh_CY_Sidebaritem_actionchooserID108503websiteViewer|websiteViewer|displaywebsitewebsite_url"><![CDATA[.\webpage\plans.html]]></data>
+  <data name="zh_CY_Sidebaritem_actionchooserID108503websiteViewer|websiteViewer|displaywebsitewebsite_title"><![CDATA[]]></data>
+  <data name="zh_CY_Sidebaritem_actionchooserID108653websiteViewer|websiteViewer|displaywebsitewebsite_url"><![CDATA[.\webpage\room_list.html]]></data>
+  <data name="zh_CY_Sidebaritem_actionchooserID108653websiteViewer|websiteViewer|displaywebsitewebsite_title"><![CDATA[]]></data>
+  <data name="zh_CY_Sidebaritem_actionchooserID106227websiteViewer|websiteViewer|displaywebsitewebsite_url"><![CDATA[./webpage/plans.html]]></data>
+  <data name="zh_CY_Sidebaritem_actionchooserID106227websiteViewer|websiteViewer|displaywebsitewebsite_title"><![CDATA[]]></data>
+  <data name="zh_CY_Sidebaritem_actionchooserID106268websiteViewer|websiteViewer|displaywebsitewebsite_url"><![CDATA[https://www.papawaqa.com.tw/spa/]]></data>
+  <data name="zh_CY_Sidebaritem_actionchooserID106268websiteViewer|websiteViewer|displaywebsitewebsite_title"><![CDATA[]]></data>
+  <data name="zh_CY_Sidebaritem_actionchooserID10679websiteViewer|websiteViewer|displaywebsitewebsite_url"><![CDATA[https://www.papawaqa.com.tw/onsenspa/]]></data>
+  <data name="zh_CY_Sidebaritem_actionchooserID10679websiteViewer|websiteViewer|displaywebsitewebsite_title"><![CDATA[]]></data>
+  <data name="zh_CY_Sidebaritem_actionchooserID106602websiteViewer|websiteViewer|displaywebsitewebsite_url"><![CDATA[https://www.papawaqa.com.tw/nearby1/]]></data>
+  <data name="zh_CY_Sidebaritem_actionchooserID106602websiteViewer|websiteViewer|displaywebsitewebsite_title"><![CDATA[]]></data>
+  <data name="zh_CY_Sidebaritem_actionchooserID106410openurlwebsiteurl"><![CDATA[https://order.papawaqa.com.tw/]]></data>
+  <data name="zh_SansControlBarhomeTip"><![CDATA[Home]]></data>
+  <data name="zh_SansControlBaropenFsTip"><![CDATA[開啟全螢幕]]></data>
+  <data name="zh_SansControlBarcloseFsTip"><![CDATA[關閉全螢幕]]></data>
+  <data name="zh_SansControlBarautorotateOnTip"><![CDATA[開啟自動旋轉]]></data>
+  <data name="zh_SansControlBarautorotateOffTip"><![CDATA[關閉自動旋轉]]></data>
+  <data name="zh_SansControlBarsoundsOnTip"><![CDATA[開啟音效]]></data>
+  <data name="zh_SansControlBarsoundsOffTip"><![CDATA[關閉音效]]></data>
+  <data name="zh_SansControlBarshareTip"><![CDATA[分享至...]]></data>
+  <data name="zh_SansControlBardisplayControlsTip"><![CDATA[顯示介面]]></data>
+  <data name="zh_SansControlBarhideControlsTip"><![CDATA[隱藏介面]]></data>
+  <data name="zh_CY_ActionDataitem01_action_click10110266websiteViewer|websiteViewer|displaywebsitewebsite_url"><![CDATA[.\webpage\carpark.html]]></data>
+  <data name="zh_CY_ActionDataitem01_action_click10110266websiteViewer|websiteViewer|displaywebsitewebsite_title"><![CDATA[]]></data>
+  <data name="zh_CY_ActionDataitem02_action_click101101287websiteViewer|websiteViewer|displaywebsitewebsite_url"><![CDATA[]]></data>
+  <data name="zh_CY_ActionDataitem02_action_click101101287websiteViewer|websiteViewer|displaywebsitewebsite_title"><![CDATA[]]></data>
+  <data name="zh_buttonForASinglePano1tooltip"><![CDATA[]]></data>
+  <data name="zh_buttonForASinglePano1panoid1020"><![CDATA[pano11]]></data>
+  <data name="zh_buttonForASinglePano2tooltip"><![CDATA[]]></data>
+  <data name="zh_buttonForASinglePano1panoid1020"><![CDATA[pano11]]></data>
+  <data name="zh_buttonForASinglePano2onclick103977openurlwebsiteurl"><![CDATA[https://order.papawaqa.com.tw/]]></data>
+  <data name="zh_buttonForASinglePano3tooltip"><![CDATA[]]></data>
+  <data name="zh_buttonForASinglePano1panoid1020"><![CDATA[pano11]]></data>
+  <data name="zh_buttonForASinglePano3onclick104774websiteViewer1|websiteViewer|toggle_websitewebsite_url"><![CDATA[.\webpage\room_info.html]]></data>
+  <data name="zh_buttonForASinglePano3onclick104774websiteViewer1|websiteViewer|toggle_websitewebsite_title"><![CDATA[]]></data>
+  <data name="zh_buttonForASinglePano4tooltip"><![CDATA[]]></data>
+  <data name="zh_buttonForASinglePano4panoid1020"><![CDATA[pano10]]></data>
+  <data name="zh_gallery2close_text"><![CDATA[Close]]></data>
+  <data name="zh_gallery2picture_title0"><![CDATA[圖片標題]]></data>
+  <data name="zh_gallery2picture_caption0"><![CDATA[圖片說明圖片說明圖片說明圖片說明圖片說明圖片說明圖片說明圖片說明]]></data>
+  <data name="zh_buttonForASinglePano5tooltip"><![CDATA[]]></data>
+  <data name="zh_buttonForASinglePano1panoid1020"><![CDATA[pano462]]></data>
+  <data name="zh_buttonForASinglePano5panoid1211"><![CDATA[pano463]]></data>
+  <data name="zh_buttonForASinglePano5panoid1222"><![CDATA[pano465]]></data>
+  <data name="zh_buttonForASinglePano6tooltip"><![CDATA[]]></data>
+  <data name="zh_buttonForASinglePano1panoid1020"><![CDATA[pano462]]></data>
+  <data name="zh_buttonForASinglePano6panoid1251"><![CDATA[pano463]]></data>
+  <data name="zh_buttonForASinglePano6panoid1262"><![CDATA[pano465]]></data>
+  <data name="zh_buttonForASinglePano6onclick104774websiteViewer1|websiteViewer|toggle_websitewebsite_url"><![CDATA[.\webpage\room04_info.html]]></data>
+  <data name="zh_buttonForASinglePano6onclick104774websiteViewer1|websiteViewer|toggle_websitewebsite_title"><![CDATA[]]></data>
+  <data name="zh_buttonForASinglePano7tooltip"><![CDATA[]]></data>
+  <data name="zh_buttonForASinglePano1panoid1020"><![CDATA[pano462]]></data>
+  <data name="zh_buttonForASinglePano7panoid1231"><![CDATA[pano463]]></data>
+  <data name="zh_buttonForASinglePano7panoid1242"><![CDATA[pano465]]></data>
+  <data name="zh_buttonForASinglePano7onclick103977openurlwebsiteurl"><![CDATA[https://order.papawaqa.com.tw/]]></data>
+
+
+  <data name="zh_vr_setup_hmd0"><![CDATA[SELECT YOUR HMD]]></data>
+  <data name="zh_vr_setup_advanced"><![CDATA[ADVANCED SETTINGS]]></data>
+  <data name="zh_vr_setup_title"><![CDATA[WEB VR SETTINGS]]></data>
+  <data name="zh_vr_setup_dvn1"><![CDATA[Device:]]></data>
+  <data name="zh_vr_setup_siz1"><![CDATA[Screen size:]]></data>
+  <data name="zh_vr_setup_ipd1"><![CDATA[IPD:]]></data>
+  <data name="zh_vr_setup_hmd1"><![CDATA[HMD:]]></data>
+  <data name="zh_vr_setup_hmd3"><![CDATA[Customize]]></data>
+  <data name="zh_vr_setup_cal"><![CDATA[Calibrate gyroscope]]></data>
+  <data name="zh_vr_setup_sav"><![CDATA[SAVE]]></data>
+  <data name="zh_vr_setup_rst"><![CDATA[RESET]]></data>
+  <data name="zh_vr_setup_simple"><![CDATA[SIMPLE]]></data>
+  <data name="zh_vr_setup_cls"><![CDATA[CLOSE]]></data>
+  <data name="zh_vr_setup_m31"><![CDATA[HMD SETTINGS]]></data>
+  <data name="zh_vr_setup_fov1"><![CDATA[FOV:]]></data>
+  <data name="zh_vr_setup_dst1"><![CDATA[Distortion:]]></data>
+  <data name="zh_vr_setup_d2tx"><![CDATA[Distortion 2:]]></data>
+  <data name="zh_vr_setup_vig1"><![CDATA[Vignette:]]></data>
+  <data name="zh_vr_setup_cac1"><![CDATA[Chromatic aberration:]]></data>
+  <data name="zh_vr_setup_olp1"><![CDATA[Overlap:]]></data>
+  <data name="zh_vr_setup_m35"><![CDATA[RETURN]]></data>
+  <data name="zh_vr_setup_cb1"><![CDATA[GYROSCOPE]]></data>
+  <data name="zh_vr_setup_cb2"><![CDATA[Place the device on a flat and[br]stable surface and tab CALIBRATE[br]to correct a gyroscope drifting.]]></data>
+  <data name="zh_vr_setup_cb3"><![CDATA[CALIBRATE]]></data>
+  <data name="zh_vr_setup_cb4"><![CDATA[RESET]]></data>
+  <data name="zh_vr_setup_cb5"><![CDATA[RETURN]]></data>
+  <data name="zh_vr_setup_cb6"><![CDATA[Calibrating...]]></data>
+  <data name="zh_vr_setup_cb7"><![CDATA[Successful calibration]]></data>
+  <data name="zh_vr_setup_cb8"><![CDATA[Calibration failed]]></data>
+  <data name="zh_vr_setup_unavailable"><![CDATA[VR mode[br]is unavailable on your device]]></data>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</krpano>
